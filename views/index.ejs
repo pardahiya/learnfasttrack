@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Learn Fast Track</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+          <img src="/img/logo.png" alt="LearnFastTrack" />
+        </a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Courses</a>
+            <div class="dropdown-content" id="course-menu">
+              <!-- Submenu items will be populated here -->
+            </div>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="hero">
+      <h1>Welcome to Learn Fast Track</h1>
+      <p>Welcome to LearnFastTrack - your express lane to mastering new skills! Dive into our comprehensive crash courses on coding, software design, software architecture, programming languages, and more. Gain valuable insights and practical knowledge in no time, all in one place. Embark on your fast track to success with LearnFastTrack!</p>
+    </div>
+    <!-- <section class="topics-section">
+      <h2>What youll learn today</h2>
+      <div class="topics-container">
+        <% topics.forEach(topic => { %>
+          <div class="topic-card">
+            <h3 class="topic-title"><%= topic.name %></h3>
+            <ul class="subtopics-list">
+              <% topic.subtopics.forEach(subtopic => { %>
+                <li class="subtopic-item"><%= subtopic.name %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% }); %>
+      </div>
+    </section> -->
+    <section class="topics-grid">
+      <h2>Explore Our Topics</h2>
+      <div class="topic-cards-container">
+        <% topics.forEach(topic => { %>
+          <div class="topic-card">
+            <div class="topic-card-header">
+              <h3><%= topic.name %></h3>
+            </div>
+            <div class="topic-card-body">
+              <p><%= topic.description %></p>
+              <ul class="subtopics-list">
+                <% topic.subtopics.forEach(subtopic => { %>
+                  <li class="subtopic-item">
+                    <a href="/tutorials/<%= topic._id %>/<%= subtopic._id %>">
+                      <i class="subtopic-icon"></i><%= subtopic.name %>
+                    </a>
+                  </li>
+                <% }) %>
+              </ul>
+              <a href="/tutorials/<%= topic._id %>">View All</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 LearnFastTrack. All rights reserved.</p>
+  </footer>
+  <script>
+    fetch('api/topics')
+      .then(response => response.json())
+      .then(data => {
+        const courseMenu = document.getElementById('course-menu');
+        data.forEach(topic => {
+          console.log('topic '+ topic);
+          const menuItem = document.createElement('a');
+          menuItem.href = `api/topics/${topic._id}`;
+          menuItem.textContent = topic.name;
+          courseMenu.appendChild(menuItem);
+        });
+      });
+  </script>
+</body>
+</html>
