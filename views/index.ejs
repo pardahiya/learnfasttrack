@@ -34,24 +34,16 @@
     </div>
     <section class="topics-grid">
       <h2>Explore Our Topics</h2>
-      <div class="topic-cards-container">
+      <div class="topic-container">
         <% topics.forEach(topic => { %>
           <div class="topic-card">
-            <div class="topic-card-header">
-              <h3><%= topic.name %></h3>
-            </div>
-            <div class="topic-card-body">
-              <p><%= topic.description %></p>
-              <ul class="subtopics">
-                <% topic.subtopics.forEach(subtopic => { %>
-                  <li class="subtopic">
-                    <a href="/tutorials/<%= topic._id %>/<%= subtopic._id %>">
-                      <i class="subtopic-icon"></i><%= subtopic.name %>
-                    </a>
-                  </li>
-                <% }) %>
-              </ul>
-              <a href="/tutorials/<%= topic._id %>">View All</a>
+            <h3 class="topic-title"><%= topic.name %></h3>
+            <div class="subtopic-list">
+              <% topic.subtopics.forEach((subtopic) => { %>
+              <div class="subtopic">
+                <a href=""><span class="subtopic-icon">&#x1F4D6;</span><%= subtopic.name %></a> 
+              </div>
+              <% }) %>
             </div>
           </div>
         <% }) %>

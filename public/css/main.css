@@ -64,57 +64,62 @@ nav ul li a:hover {
   padding: 2rem 0;
 }
 
-.topic-card-container {
+.topic-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0 -1rem;
-  padding: 1rem;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  padding: 0.2rem 0.3rem;
 }
 
 .topic-card {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  background-color: var(--card-bg-color);
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
   padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 2rem);
+  max-width: 350px;
 }
 
-.topic-card h3 {
-  margin: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--text-color);
+.topic-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.subtopics-list {
+.subtopic-list {
   display: flex;
   flex-wrap: wrap;
-  list-style-type: none;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+  gap: 5px;
 }
 
-.subtopic-item {
+.subtopic {
   display: flex;
   align-items: center;
+  font-size: 0.9rem;
+  background-color: var(--card-bg-color-color);
+  color: var(--light-text-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
 
-.subtopic-item span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--primary-color);
-  color: var(--light-text-color);
-  border-radius: 50%;
-  font-size: 1rem;
-  margin-right: 0.5rem;
+.subtopic a {
+  text-decoration: none;
+  padding: 0.3rem;
+  border-radius: 4px;
+  color: var(--text-color);
 }
+
+.subtopic a:hover {
+  background: var(--primary-color);
+}
+
+.subtopic-icon {
+  margin-right: 4px;
+}
+
 
 .footer {
   background-color: var(--primary-color);
