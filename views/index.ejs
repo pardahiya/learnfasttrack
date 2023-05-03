@@ -61,19 +61,13 @@
   <footer>
     <p>&copy; 2023 LearnFastTrack. All rights reserved.</p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
   <script>
-    fetch('api/topics')
-      .then(response => response.json())
-      .then(data => {
-        const courseMenu = document.getElementById('course-menu');
-        data.forEach(topic => {
-          console.log('topic '+ topic);
-          const menuItem = document.createElement('a');
-          menuItem.href = `api/topics/${topic._id}`;
-          menuItem.textContent = topic.name;
-          courseMenu.appendChild(menuItem);
-        });
-      });
+    
   </script>
+<script src="/js/custom.js"></script>
+
+  
 </body>
 </html>
