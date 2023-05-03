@@ -42,9 +42,9 @@
             </div>
             <div class="topic-card-body">
               <p><%= topic.description %></p>
-              <ul class="subtopics-list">
+              <ul class="subtopics">
                 <% topic.subtopics.forEach(subtopic => { %>
-                  <li class="subtopic-item">
+                  <li class="subtopic">
                     <a href="/tutorials/<%= topic._id %>/<%= subtopic._id %>">
                       <i class="subtopic-icon"></i><%= subtopic.name %>
                     </a>

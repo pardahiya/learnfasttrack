@@ -1,17 +1,17 @@
 
 
-$(document).ready(function () {
-    $('.dropdown').hover(
-      function () {
-        $('.dropdown-content', this).stop(true, true).slideDown('fast');
-        $(this).toggleClass('open');
-      },
-      function () {
-        $('.dropdown-content', this).stop(true, true).slideUp('fast');
-        $(this).toggleClass('open');
-      }
-    );
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropdown.addEventListener("mouseenter", function () {
+    dropdownContent.style.display = "block";
   });
+
+  dropdown.addEventListener("mouseleave", function () {
+    dropdownContent.style.display = "none";
+  });
+});
   fetch('api/topics')
       .then(response => response.json())
       .then(data => {
