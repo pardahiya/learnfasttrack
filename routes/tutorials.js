@@ -14,30 +14,31 @@ router.get('/tutorials', (req, res) => {
   });
 });
 
-// Get a tutorial by ID
+// Get a Tutorial by ID
 router.get('/tutorials/:id', (req, res) => {
-  tutorials.findOne({ _id: req.params.id }, (err, tutorial) => {
+  tutorials.findOne({ _id: req.params.id }, (err, Tutorial) => {
     if (err) {
       res.status(500).send(err);
-    } else if (!tutorial) {
-      res.status(404).send({ message: 'tutorial not found' });
+    } else if (!Tutorial) {
+      res.status(404).send({ message: 'Tutorial not found' });
     } else {
-      res.send(tutorial);
+      res.send(Tutorial);
     }
   });
 });
 
-// Create a new tutorial
+// Create a new Tutorial
 router.post('/tutorials', (req, res) => {
     const newTutorial = {
         subtopic: req.body.subtopic,
         title: req.body.title,
-        content: req.body.content,
+        description: req.body.description,
         level: req.body.level, // "basic", "intermediate", or "advanced"
         tags: req.body.tags, // array of tags
+        articles: req.body.articles
       };
 
-  tutorials.insert(newtutorial, (err, newDoc) => {
+  tutorials.insert(newTutorial, (err, newDoc) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -46,9 +47,9 @@ router.post('/tutorials', (req, res) => {
   });
 });
 
-// Update a tutorial by ID
+// Update a Tutorial by ID
 router.put('/tutorials/:id', (req, res) => {
-  const updatedtutorial = {
+  const updatedTutorial = {
     subtopic: req.body.subtopic,
     title: req.body.title,
     content: req.body.content,
@@ -56,26 +57,26 @@ router.put('/tutorials/:id', (req, res) => {
     tags: req.body.tags, // array of tags
   };
 
-  tutorials.update({ _id: req.params.id }, { $set: updatedtutorial }, {}, (err, numAffected) => {
+  tutorials.update({ _id: req.params.id }, { $set: updatedTutorial }, {}, (err, numAffected) => {
     if (err) {
       res.status(500).send(err);
     } else if (numAffected === 0) {
-      res.status(404).send({ message: 'tutorial not found' });
+      res.status(404).send({ message: 'Tutorial not found' });
     } else {
-      res.send({ message: 'tutorial updated successfully' });
+      res.send({ message: 'Tutorial updated successfully' });
     }
   });
 });
 
-// Delete a tutorial by ID
+// Delete a Tutorial by ID
 router.delete('/tutorials/:id', (req, res) => {
   tutorials.remove({ _id: req.params.id }, {}, (err, numRemoved) => {
     if (err) {
       res.status(500).send(err);
     } else if (numRemoved === 0) {
-      res.status(404).send({ message: 'tutorial not found' });
+      res.status(404).send({ message: 'Tutorial not found' });
     } else {
-      res.send({ message: 'tutorial deleted successfully' });
+      res.send({ message: 'Tutorial deleted successfully' });
     }
   });
 });
