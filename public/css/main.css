@@ -174,3 +174,99 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
+/* Tutorial Page Styles */
+
+.tutorial-page {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tutorial-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutorial-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.tutorial-page .left-column {
+  flex: 1;
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.tutorial-page .left-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tutorial-page .left-column ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tutorial-page .left-column ul li:last-child {
+  border-bottom: none;
+}
+
+.tutorial-page .left-column ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+.tutorial-page .center-column {
+  flex: 2;
+  max-width: 50%;
+  flex-basis: 50%;
+  padding: 15px;
+  margin-bottom: 2rem;
+}
+
+.tutorial-page .center-column h1,
+.tutorial-page .center-column h2,
+.tutorial-page .center-column h3,
+.tutorial-page .center-column h4,
+.tutorial-page .center-column h5,
+.tutorial-page .center-column h6 {
+  color: #333;
+}
+
+.tutorial-page .center-column p {
+  color: #666;
+  line-height: 1.6;
+}
+.tutorial-page .right-column {
+  flex: 1;
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.tutorial-page .right-column .menu {
+  /* Add any custom styles for the additional menu */
+}
+
+.tutorial-page .right-column .ads {
+  /* Add any custom styles for the ads */
+}
+@media (max-width: 991.98px) {
+  .tutorial-page .left-column,
+  .tutorial-page .center-column,
+  .tutorial-page .right-column {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}

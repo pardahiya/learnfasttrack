@@ -35,7 +35,7 @@ router.post('/tutorials', (req, res) => {
         description: req.body.description,
         level: req.body.level, // "basic", "intermediate", or "advanced"
         tags: req.body.tags, // array of tags
-        articles: req.body.articles
+        articles: req.body.articles // array of article ids
       };
 
   tutorials.insert(newTutorial, (err, newDoc) => {

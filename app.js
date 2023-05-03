@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const indexRouter = require('./routes/index');
 const topicsRoutes = require('./routes/topics');
+const articlesRoutes = require('./routes/articles');
 const tutorialsRoutes = require('./routes/tutorials');
 
 const app = express();
