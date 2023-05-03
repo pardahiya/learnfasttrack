@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass public/scss/main.scss public/css/main.css",
-    "sass:watch": "node-sass public/scss/main.scss public/css/main.css --watch"
+    "sass": "node-sass --output-style compressed -o public/css public/scss"
   },
   "author": "",
   "license": "ISC",
