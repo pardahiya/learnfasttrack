@@ -1,0 +1,136 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$light-color: #ecf0f1;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Resets
+html,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// Styles
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: $primary-color;
+  nav {
+    @include flex-center;
+    height: 60px;
+    .nav-wrapper {
+      width: 80%;
+      @include flex-center;
+      .brand-logo {
+        color: $light-color;
+        font-size: 24px;
+      }
+      ul {
+        list-style-type: none;
+        @include flex-center;
+        li {
+          margin-left: 20px;
+          a {
+            color: $light-color;
+            text-decoration: none;
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  .hero {
+    @include flex-center;
+    flex-direction: column;
+    height: 400px;
+    background-color: $secondary-color;
+    h1 {
+      color: $light-color;
+      font-size: 48px;
+    }
+    p {
+      color: $light-color;
+      font-size: 24px;
+    }
+  }
+  .tutorial-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  padding: 20px 0;
+  p {
+    color: $light-color;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.tutorial-card {
+  background-color: $light-color;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.topics-dropdown {
+  position: relative;
+  &:hover .topics-dropdown-menu {
+    display: block;
+  }
+}
+
+.topics-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $light-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    padding: 8px 16px;
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

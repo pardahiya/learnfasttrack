@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass public/scss/main.scss public/css/main.css",
+    "sass:watch": "node-sass public/scss/main.scss public/css/main.css --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "node-sass": "^8.0.0",
     "stylelint": "^15.6.0"
   },
   "dependencies": {
