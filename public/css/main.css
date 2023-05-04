@@ -1,272 +1,119 @@
-:root {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
-  --background-color: #f5f5f5;
-  --text-color: #333;
-  --light-text-color: #eee;
-  --card-bg-color: #fff;
-  --hover-color: #34495e;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
+/* Header */
 header {
-  background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.nav-wrapper {
-  display: flex;
-  align-items: center;
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-.brand-logo img {
-  max-height: 3rem;
+/* Main Menu */
+.main-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
+.main-menu>li {
+    position: relative;
 }
 
-nav ul li a {
-  color: var(--light-text-color);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
+.main-menu a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
 }
 
-nav ul li a:hover {
-  background-color: var(--secondary-color);
+/* Dropdown Menu */
+.topics-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
 }
 
-.hero {
-  background-color: var(--secondary-color);
-  color: var(--light-text-color);
-  padding: 4rem 0;
-  text-align: center;
+.subtopics-dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
 }
 
-.topics-section {
-  padding: 2rem 0;
+.topics-dropdown li:hover>.subtopics-dropdown,
+.main-menu li:hover>.topics-dropdown {
+    display: block;
 }
 
-.topic-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 2rem;
-  padding: 0.2rem 0.3rem;
-}
-
-.topic-card {
-  background-color: var(--card-background-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  width: calc(33% - 2rem);
-  max-width: 350px;
-}
-
-.topic-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.subtopic-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.subtopic {
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-  background-color: var(--card-bg-color-color);
-  color: var(--light-text-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  margin-bottom: 5px;
-}
-
-.subtopic a {
-  text-decoration: none;
-  padding: 0.3rem;
-  border-radius: 4px;
-  color: var(--text-color);
-}
-
-.subtopic a:hover {
-  background: var(--primary-color);
-}
-
-.subtopic-icon {
-  margin-right: 4px;
-}
-
-
-.footer {
-  background-color: var(--primary-color);
-  color: var(--light-text-color);
-  padding: 1rem 0;
-  text-align: center;
-}
-
-/* Dropdown menu styles */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--card-bg-color);
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0;
-  border-radius: 4px
-}
-
-.dropdown-content a {
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem 1rem;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--hover-color);
-  color: var(--light-text-color);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropbtn:hover {
-  background-color: var(--secondary-color);
-}
-
-@media screen and (max-width: 768px) {
-  .topic-card-container {
-    flex-direction: column;
-    gap: 1rem;
+/* Main content styles */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
   }
-
-  .topic-card {
-    max-width: 100%;
+  
+  .tutorials {
+    flex: 0 0 70%;
+    margin-right: 30px;
   }
-}
-
-/* Tutorial Page Styles */
-
-.tutorial-page {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.tutorial-page .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.tutorial-page .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.tutorial-page .left-column {
-  flex: 1;
-  max-width: 25%;
-  flex-basis: 25%;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
-}
-
-.tutorial-page .left-column ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.tutorial-page .left-column ul li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.tutorial-page .left-column ul li:last-child {
-  border-bottom: none;
-}
-
-.tutorial-page .left-column ul li a {
-  color: #007bff;
-  text-decoration: none;
-}
-.tutorial-page .center-column {
-  flex: 2;
-  max-width: 50%;
-  flex-basis: 50%;
-  padding: 15px;
-  margin-bottom: 2rem;
-}
-
-.tutorial-page .center-column h1,
-.tutorial-page .center-column h2,
-.tutorial-page .center-column h3,
-.tutorial-page .center-column h4,
-.tutorial-page .center-column h5,
-.tutorial-page .center-column h6 {
-  color: #333;
-}
-
-.tutorial-page .center-column p {
-  color: #666;
-  line-height: 1.6;
-}
-.tutorial-page .right-column {
-  flex: 1;
-  max-width: 25%;
-  flex-basis: 25%;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
-}
-
-.tutorial-page .right-column .menu {
-  /* Add any custom styles for the additional menu */
-}
-
-.tutorial-page .right-column .ads {
-  /* Add any custom styles for the ads */
-}
-@media (max-width: 991.98px) {
-  .tutorial-page .left-column,
-  .tutorial-page .center-column,
-  .tutorial-page .right-column {
-    max-width: 100%;
-    flex-basis: 100%;
+  
+  .tutorials h2 {
+    margin-bottom: 20px;
   }
-}
+  
+  .tutorial-list .tutorial-item {
+    margin-bottom: 30px;
+  }
+  
+  .tutorial-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar {
+    flex: 0 0 25%;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .popular-articles li {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styles */
+  .footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  

@@ -1,114 +1,40 @@
-const {
-   topicsDb,
-   subtopicsDb,
-   articlesDb,
-   tutorialsDb,
-} = require("../data/db");
+const db = require("../data/db");
 
-const topicsData = [
-   {
-      topic: "Topic1",
-   },
-   {
-      topic: "Topic2",
-   },
-];
-
-const subtopicsData = [
-   {
-      subtopic: "sub11",
-      topic: ["Topic1"],
-   },
-   {
-      subtopic: "sub12",
-      topic: ["Topic1"],
-   },
-   {
-      subtopic: "sub21",
-      topic: ["Topic2"],
-   },
-   {
-      subtopic: "sub22",
-      topic: ["Topic2"],
-   },
-];
-
-const articlesData = [
-   {
-      subtopic: "sub11",
-      title: "Article 1.1.1",
-      content: "Sample content for Article 1.1.1",
-      level: "basic",
-      tags: ["tag1", "tag2"],
-      approxCompletionTime: 300,
-   },
-   {
-      subtopic: "sub12",
-      title: "Article 1.2.1",
-      content: "Sample content for Article 1.2.1",
-      level: "intermediate",
-      tags: ["tag1", "tag2"],
-      approxCompletionTime: 300,
-   },
-];
-
-const tutorialsData = [
-   {
-      subtopic: "sub12",
-      title: "Tutorial 1.1.1",
-      description: "A tutorial for Subtopic 1.1",
-      level: "basic",
-      tags: ["tag1", "tag2"],
-      articles: [],
-   },
-   {
-      subtopic: "sub21",
-      title: "Tutorial 1.2.1",
-      description: "A tutorial for Subtopic 1.2",
-      level: "intermediate",
-      tags: ["tag1", "tag2"],
-      articles: [],
-   },
-];
+const topicsData = require("./topics.json");
+const subtopicsData = require("./subtopics.json");
+const articlesData = require("./articles.json");
+const tutorialsData = require("./tutorials.json");
 
 async function seedDatabase() {
-   try {
-      await topicsDb.deleteMany();
-      await subtopicsDb.deleteMany();
-      await articlesDb.deleteMany();
-      await tutorialsDb.deleteMany();
+   // Clean up the database
+   await db.topics.remove({}, { multi: true });
+   await db.subtopics.remove({}, { multi: true });
+   await db.articles.remove({}, { multi: true });
+   await db.tutorials.remove({}, { multi: true });
 
-      const topicIdMap = {};
-
-      for (const topicData of topicsData) {
-         const topic = await topicsDb.insert({ name: topicData.topic });
-         const subtopic = await subtopicsDb.insert({
-            name: subtopicData.subtopic,
-            topic: topicIdMap[subtopicData.topic],
-         });
-         const article = await articlesDb.insert({
-            ...articleData,
-            subtopic: subtopicIdMap[articleData.subtopic],
-         });
-         await tutorialsDb.insert({
-            ...tutorialData,
-            subtopic: subtopicIdMap[tutorialData.subtopic],
-            articles: tutorialArticles,
-         });
-      }
-
-      console.log("Database seeded successfully!");
-   } catch (error) {
-      console.error("Error while seeding the database:", error);
+   // Insert topics
+   for (const topic of topicsData) {
+      await db.topics.insert(topic);
    }
+
+   // Insert subtopics
+   for (const subtopic of subtopicsData) {
+      await db.subtopics.insert(subtopic);
+   }
+
+   // Insert articles
+   for (const article of articlesData) {
+      await db.articles.insert(article);
+   }
+
+   // Insert tutorials
+   for (const tutorial of tutorialsData) {
+      await db.tutorials.insert(tutorial);
+   }
+
+   console.log("Database seeding completed successfully!");
 }
 
-seedDatabase()
-   .then(() => {
-      console.log("Database seeded successfully.");
-   })
-   .catch((error) => {
-      console.error("Error while seeding the database:", error);
-   });
-
-seedDatabase();
+seedDatabase().catch((err) => {
+   console.error(`Error while seeding the database: ${err}`);
+});

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Learn Fast Track</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="hero">
+      <h1>Welcome to Learn Fast Track</h1>
+      <p>Welcome to LearnFastTrack - your express lane to mastering new skills! Dive into our comprehensive crash courses on coding, software design, software architecture, programming languages, and more. Gain valuable insights and practical knowledge in no time, all in one place. Embark on your fast track to success with LearnFastTrack!</p>
+    </div>
+    <section class="topics-grid">
+      <h2>Explore Our Topics</h2>
+      <div class="topic-container">
+        <% topics.forEach(topic => { %>
+          <div class="topic-card">
+            <h3 class="topic-title"><%= topic.name %></h3>
+            <div class="subtopic-list">
+              <% topic.subtopics.forEach((subtopic) => { %>
+              <div class="subtopic">
+                <a href=""><span class="subtopic-icon">&#x1F4D6;</span><%= subtopic.name %></a> 
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+  <script>
+    
+  </script>
+<script src="/js/custom.js"></script>
+
+  
+</body>
+</html>

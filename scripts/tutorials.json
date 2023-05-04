@@ -1,6 +1,6 @@
 [
    {
-      "subtopic_id": "HTML",
+      "subtopic": "HTML",
       "title": "HTML Beginner's Guide",
       "description": "A step-by-step guide to learning HTML for beginners.",
       "level": "basic",
@@ -8,7 +8,7 @@
       "articles": ["Introduction to HTML"]
    },
    {
-      "subtopic_id": "CSS",
+      "subtopic": "CSS",
       "title": "CSS Beginner's Guide",
       "description": "A step-by-step guide to learning CSS for beginners.",
       "level": "basic",
@@ -16,7 +16,7 @@
       "articles": ["Introduction to CSS"]
    },
    {
-      "subtopic_id": "Python",
+      "subtopic": "Python",
       "title": "Python Beginner's Guide",
       "description": "A step-by-step guide to learning Python for beginners.",
       "level": "basic",
@@ -24,7 +24,7 @@
       "articles": ["Python Basics"]
    },
    {
-      "subtopic_id": "Machine Learning",
+      "subtopic": "Machine Learning",
       "title": "Machine Learning Beginner's Guide",
       "description": "A step-by-step guide to learning Machine Learning for beginners.",
       "level": "basic",

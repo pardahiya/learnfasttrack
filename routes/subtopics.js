@@ -32,7 +32,7 @@ router.post("/subtopics", (req, res) => {
    const newsubTopic = {
       name: req.body.name,
       description: req.body.description,
-      subsubtopics: [],
+      topic: req.body.topic,
    };
 
    subtopics.insert(newsubTopic, (err, newDoc) => {
@@ -49,6 +49,7 @@ router.put("/subtopics/:id", (req, res) => {
    const updatedsubTopic = {
       name: req.body.name,
       description: req.body.description,
+      topic: req.body.topic,
    };
 
    subtopics.update(
