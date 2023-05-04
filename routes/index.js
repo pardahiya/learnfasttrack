@@ -1,18 +1,47 @@
 const express = require("express");
-const { topics, subtopics } = require("../data/db");
+const { topics, subtopics, articles, tutorials } = require("../data/db");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-   try {
-      const alltopics = await topics.find({});
-      const allsubtopics = await subtopics.find({});
+// topics.loadDatabase();
+// subtopics.loadDatabase();
 
-      // Pass the data to the index.ejs view
-      res.render("index", { topics: alltopics, subtopics: allsubtopics });
-   } catch (error) {
-      console.error("Error fetching topics and subtopics:", error);
-      res.status(500).send("Error fetching topics and subtopics");
-   }
+router.get("/", (req, res) => {
+   topics.find({}, (err, alltopics) => {
+      if (err) {
+         console.log(err);
+         res.status(500).send("Error while fetching topics.");
+      } else {
+         subtopics.find({}, (err, allsubtopics) => {
+            if (err) {
+               console.log(err);
+               res.status(500).send("Error while fetching subtopics.");
+            } else {
+               articles.find({}, (err, allarticles) => {
+                  if (err) {
+                     console.log(err);
+                     res.status(500).send("Error while fetching subtopics.");
+                  } else {
+                     tutorials.find({}, (err, alltutorials) => {
+                        if (err) {
+                           console.log(err);
+                           res.status(500).send(
+                              "Error while fetching subtopics."
+                           );
+                        } else {
+                           res.render("index", {
+                              topics: alltopics,
+                              subtopics: allsubtopics,
+                              articles: allarticles,
+                              tutorials: alltutorials,
+                           });
+                        }
+                     });
+                  }
+               });
+            }
+         });
+      }
+   });
 });
 
 module.exports = router;

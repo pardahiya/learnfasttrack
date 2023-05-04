@@ -10,11 +10,11 @@
           <ul class="topics-dropdown">
             <% topics.forEach((topic) => { %>
               <li>
-                <a href="#"><%= topic.topicName %></a>
+                <a href="#"><%= topic.name %></a>
                 <ul class="subtopics-dropdown">
-                  <% topic.subtopics.forEach((subtopic) => { %>
+                  <% subtopics.filter((subtopic) => subtopic.topic.includes(topic.topic)).forEach((subtopic) => { %>
                     <li><a href="#"><%= subtopic.name %></a></li>
-                  <% }); %>
+                <% }) %>
                 </ul>
               </li>
             <% }); %>
