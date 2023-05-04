@@ -1,6 +1,6 @@
 [
    {
-      "subtopic_id": "<html_subtopic_id>",
+      "subtopic_id": "HTML",
       "title": "Introduction to HTML",
       "content": "HTML is the standard markup language for creating web pages...",
       "level": "basic",
@@ -8,7 +8,7 @@
       "approxCompletionTime": 300
    },
    {
-      "subtopic_id": "<css_subtopic_id>",
+      "subtopic_id": "CSS",
       "title": "Introduction to CSS",
       "content": "CSS is a stylesheet language used for describing the look and formatting...",
       "level": "basic",
@@ -16,7 +16,7 @@
       "approxCompletionTime": 300
    },
    {
-      "subtopic_id": "<python_subtopic_id>",
+      "subtopic_id": "Python",
       "title": "Python Basics",
       "content": "Python is a high-level, interpreted, and general-purpose programming language...",
       "level": "basic",
@@ -24,7 +24,7 @@
       "approxCompletionTime": 300
    },
    {
-      "subtopic_id": "<machine_learning_subtopic_id>",
+      "subtopic_id": "Machine Learning",
       "title": "Introduction to Machine Learning",
       "content": "Machine Learning is a subfield of Artificial Intelligence...",
       "level": "basic",

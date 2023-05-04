@@ -1,34 +1,34 @@
 [
    {
-      "subtopic_id": "<html_subtopic_id>",
+      "subtopic_id": "HTML",
       "title": "HTML Beginner's Guide",
       "description": "A step-by-step guide to learning HTML for beginners.",
       "level": "basic",
       "tags": ["html", "web development"],
-      "articles": ["<introduction_to_html_article_id>"]
+      "articles": ["Introduction to HTML"]
    },
    {
-      "subtopic_id": "<css_subtopic_id>",
+      "subtopic_id": "CSS",
       "title": "CSS Beginner's Guide",
       "description": "A step-by-step guide to learning CSS for beginners.",
       "level": "basic",
       "tags": ["css", "web development"],
-      "articles": ["<introduction_to_css_article_id>"]
+      "articles": ["Introduction to CSS"]
    },
    {
-      "subtopic_id": "<python_subtopic_id>",
+      "subtopic_id": "Python",
       "title": "Python Beginner's Guide",
       "description": "A step-by-step guide to learning Python for beginners.",
       "level": "basic",
       "tags": ["python", "data science"],
-      "articles": ["<python_basics_article_id>"]
+      "articles": ["Python Basics"]
    },
    {
-      "subtopic_id": "<machine_learning_subtopic_id>",
+      "subtopic_id": "Machine Learning",
       "title": "Machine Learning Beginner's Guide",
       "description": "A step-by-step guide to learning Machine Learning for beginners.",
       "level": "basic",
       "tags": ["machine learning", "data science"],
-      "articles": ["<introduction_to_machine_learning_article_id>"]
+      "articles": ["Introduction to Machine Learning"]
    }
 ]
