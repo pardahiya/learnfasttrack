@@ -7,18 +7,35 @@ const {
 
 const topicsData = [
    {
-      topicName: "Topic1",
-      subtopics: ["sub11", "sub12"],
+      topic: "Topic1",
    },
    {
-      topicName: "Topic2",
-      subtopics: ["sub21", "sub22"],
+      topic: "Topic2",
+   },
+];
+
+const subtopicsData = [
+   {
+      subtopic: "sub11",
+      topic: ["Topic1"],
+   },
+   {
+      subtopic: "sub12",
+      topic: ["Topic1"],
+   },
+   {
+      subtopic: "sub21",
+      topic: ["Topic2"],
+   },
+   {
+      subtopic: "sub22",
+      topic: ["Topic2"],
    },
 ];
 
 const articlesData = [
    {
-      subtopicName: "sub11",
+      subtopic: "sub11",
       title: "Article 1.1.1",
       content: "Sample content for Article 1.1.1",
       level: "basic",
@@ -26,7 +43,7 @@ const articlesData = [
       approxCompletionTime: 300,
    },
    {
-      subtopicName: "sub12",
+      subtopic: "sub12",
       title: "Article 1.2.1",
       content: "Sample content for Article 1.2.1",
       level: "intermediate",
@@ -37,7 +54,7 @@ const articlesData = [
 
 const tutorialsData = [
    {
-      subtopicName: "sub12",
+      subtopic: "sub12",
       title: "Tutorial 1.1.1",
       description: "A tutorial for Subtopic 1.1",
       level: "basic",
@@ -45,7 +62,7 @@ const tutorialsData = [
       articles: [],
    },
    {
-      subtopicName: "sub21",
+      subtopic: "sub21",
       title: "Tutorial 1.2.1",
       description: "A tutorial for Subtopic 1.2",
       level: "intermediate",
@@ -55,59 +72,34 @@ const tutorialsData = [
 ];
 
 async function seedDatabase() {
-   // Insert topics and subtopics
-   const subtopicIdsByName = new Map();
-   for (const { topicName, subtopics } of topicsData) {
-      const topic = { name: topicName };
-      const { _id: topicId } = await topicsDb.insert(topic);
+   try {
+      await topicsDb.deleteMany();
+      await subtopicsDb.deleteMany();
+      await articlesDb.deleteMany();
+      await tutorialsDb.deleteMany();
 
-      for (const name of subtopics) {
-         const subtopic = { topic: topicId, name };
-         const { _id: subtopicId } = await subtopicsDb.insert(subtopic);
-         subtopicIdsByName.set(name, subtopicId);
+      const topicIdMap = {};
+
+      for (const topicData of topicsData) {
+         const topic = await topicsDb.insert({ name: topicData.topic });
+         const subtopic = await subtopicsDb.insert({
+            name: subtopicData.subtopic,
+            topic: topicIdMap[subtopicData.topic],
+         });
+         const article = await articlesDb.insert({
+            ...articleData,
+            subtopic: subtopicIdMap[articleData.subtopic],
+         });
+         await tutorialsDb.insert({
+            ...tutorialData,
+            subtopic: subtopicIdMap[tutorialData.subtopic],
+            articles: tutorialArticles,
+         });
       }
-   }
 
-   // Insert articles
-   for (const {
-      subtopicName,
-      title,
-      content,
-      level,
-      tags,
-      approxCompletionTime,
-   } of articlesData) {
-      const subtopicId = subtopicIdsByName.get(subtopicName);
-      const article = {
-         subtopic: subtopicId,
-         title,
-         content,
-         level,
-         tags,
-         approxCompletionTime,
-      };
-      await articlesDb.insert(article);
-   }
-
-   // Insert tutorials
-   for (const {
-      subtopicName,
-      title,
-      description,
-      level,
-      tags,
-      articles,
-   } of tutorialsData) {
-      const subtopicId = subtopicIdsByName.get(subtopicName);
-      const tutorial = {
-         subtopic: subtopicId,
-         title,
-         description,
-         level,
-         tags,
-         articles,
-      };
-      await tutorialsDb.insert(tutorial);
+      console.log("Database seeded successfully!");
+   } catch (error) {
+      console.error("Error while seeding the database:", error);
    }
 }
 
