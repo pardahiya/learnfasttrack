@@ -1,0 +1,6 @@
+[
+   { "name": "HTML", "topic_id": "<web_development_topic_id>" },
+   { "name": "CSS", "topic_id": "<web_development_topic_id>" },
+   { "name": "Python", "topic_id": "<data_science_topic_id>" },
+   { "name": "Machine Learning", "topic_id": "<data_science_topic_id>" }
+]

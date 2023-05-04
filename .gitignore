@@ -5,6 +5,7 @@ yarn-error.log
 
 # Data directory
 data/db/
+req_design/
 
 # Logs
 logs/
