@@ -25,7 +25,7 @@
               <ul class="dropdown-menu dropdown-menu-md bg-white rounded py-4 mt-4" aria-labelledby="navbarVerticalMenu">
                 <% categories.forEach(category => { %>  
                   <li class="dropdown-item dropright">
-                      <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="/categories/<%= category.name %>">
+                      <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="/tutorials/category/<%= category.name %>">
                           <div class="me-4 d-flex text-primary icon-xs">
                               <!-- Icon -->
                               <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,7 @@
                       <div class="dropdown-menu ps-3 top-0 pe-0 py-0 shadow-none bg-transparent">
                           <div class="dropdown-menu-md bg-white rounded dropdown-menu-inner">
                               <% category.topics.forEach(topic => { %>  
-                                <a class="dropdown-item" href="/topics/<%= topic.name %>">
+                                <a class="dropdown-item" href="/tutorials/topic/<%= topic.name %>">
                                   <%= topic.title %>
                                 </a>
                               <% }) %>

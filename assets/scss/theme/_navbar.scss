@@ -2,8 +2,11 @@
 // navbar.scss
 // Extended from Bootstrap
 //
-
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;  // to make sure navbar stays on top of other content
   transition: $transition-base;
   transition-property: background-color, color;
   z-index: $zindex-fixed;
