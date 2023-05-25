@@ -1,0 +1,15 @@
+//
+// alerts
+// Extended from Bootstrap
+//
+
+// Color variants
+//
+// Using Bootstrap's core alert-variant mixin to generate solid background color + yiq colorized text (and making close/links match those colors)
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+}

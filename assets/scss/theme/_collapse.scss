@@ -1,0 +1,119 @@
+//
+// collapse.scss
+// Theme component
+//
+
+.collapse-chevron {
+  display: inline-block;
+  transition: $transition-base;
+}
+
+// Expanded
+
+[aria-expanded="true"] .collapse-chevron {
+  transform: rotate(-180deg);
+}
+
+.footer-accordion {
+    @include media-breakpoint-up(md) {
+        .collapse,
+        .collapsing {
+            display: block !important;
+            height: auto !important;
+        }
+    }
+}
+
+.collapse-accordion-toggle {
+    @include accordion-toggle;
+}
+
+.footer-accordion-toggle {
+    @include accordion-toggle;
+
+    @include media-breakpoint-up(md) {
+        cursor: inherit !important;
+    }
+
+    span,div {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}
+
+
+// Read more collapse
+.read-more[aria-expanded="true"] {
+    .more {display: none !important;}
+}
+
+.read-more[aria-expanded="false"] {
+    .less {display: none !important;}
+}
+
+//Siderbar
+
+.sidebar-collapse {
+    z-index: 2;
+    position: fixed;
+    top: 238px;
+    bottom: 0;
+
+    @include media-breakpoint-up(md) {
+        top: 110px;
+    }
+
+    > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        left: 100%;
+        margin-top: 30px;
+        position: absolute;
+        transition: transform .3s ease-out;
+
+        &[aria-expanded="false"] {
+            transform: translate(-310px,0);
+
+            @include media-breakpoint-up(sm) {
+                transform: translate(-390px,0);
+            }
+        }
+
+        &[aria-expanded="true"] {
+            transform: translate(-310px,0);
+            z-index: 2;
+
+            @media (min-width: 370px) {
+                transform: translate(0,0);
+            }
+        }
+    }
+
+    > .collapse,
+    > .collapsing {
+        border-right:1px solid $border-color;
+        width: 310px;
+        height: auto;
+        display: block;
+        transition: transform .1s ease-out;
+        transform: translate(-310px,0);
+        background-color: $white;
+
+        &.show {
+            transform: translate(0,0);
+        }
+
+        @include media-breakpoint-up(sm) {
+            width: 390px;
+            transform: translate(-390px,0);
+        }
+    }
+}
+
+.sidebar-collapse-scroll {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

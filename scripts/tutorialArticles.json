@@ -1,0 +1,22 @@
+[
+   {
+      "tutorial": "html_beginner_guide",
+      "articles": ["introduction_to_html", "html_syntax_and_structure", "creating_your_first_html_page", "common_html_elements", "html_forms_and_input"],
+      "image": ""
+   },
+   {
+      "tutorial": "css_beginner_guide",
+      "articles": ["intro_css"],
+      "image": ""
+   },
+   {
+      "tutorial": "python_beginner_guide",
+      "articles": ["python_basics"],
+      "image": ""
+   },
+   {
+      "tutorial": "ml_beginner_guide",
+      "articles": ["intro_ml"],
+      "image": ""
+   }
+]

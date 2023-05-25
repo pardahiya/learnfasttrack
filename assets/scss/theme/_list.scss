@@ -1,0 +1,92 @@
+//
+// list.scss
+// Theme component
+//
+
+.list {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.list-item + .list-item {
+  margin-top: $list-item-spacing-y;
+}
+
+.list-link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: $list-link-font-size;
+  color: $list-link-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $list-link-hover-color;
+  }
+}
+
+.list-checkbox {
+    li + li {
+        margin-top: 15px;
+    }
+}
+
+.columns-2 {
+    columns: 2;
+}
+
+.list-style-v1,
+.list-style-v2 {
+    li {
+        margin-bottom: 20px;
+        display: flex;
+        position: relative;
+    }
+}
+
+.list-style-v1 {
+    li {
+        align-items: center;
+
+        &::after {
+            content: " ";
+            border-radius: 50%;
+            background-color: $teal;
+            height: 18px;
+            width: 18px;
+            order: -1;
+            margin-right: -12px;
+        }
+
+        &::before {
+            content: "\f00c";
+            font-weight: 900;
+            font-size: 8px;
+            font-family: 'Font Awesome 5 Free';
+            color: $white;
+            margin-right: 16px;
+        }
+    }
+}
+
+.list-style-v2 {
+    li {
+        &::before {
+            content: " ";
+            border-radius: 50%;
+            background-color: $teal;
+            height: 6px;
+            width: 6px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            margin-top: 8px;
+        }
+    }
+}
+
+.list-checkbox-limit {
+    @extend .h-152 !optional;
+    @extend .vertical-scroll;
+}

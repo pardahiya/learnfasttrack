@@ -1,0 +1,32 @@
+[
+   {
+      "name": "web_development",
+      "title": "Web Development",
+      "description": "Web Development",
+      "image": ""
+   },
+   {
+      "name": "data_science",
+      "title": "Data Science",
+      "description": "Data Science",
+      "image": ""
+   },
+   {
+      "name": "programming",
+      "title": "Programming",
+      "description": "Programming",
+      "image": ""
+   },
+   {
+      "name": "networking",
+      "title": "Networking",
+      "description": "Explore the world of data science and learn how to analyze and interpret data.",
+      "image": ""
+   },
+   {
+      "name": "cyber_security",
+      "title": "Cyber Security",
+      "description": "Learn the basics of web development and build your own website.",
+      "image": ""
+   }
+]

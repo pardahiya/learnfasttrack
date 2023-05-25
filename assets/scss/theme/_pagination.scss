@@ -1,0 +1,88 @@
+//
+// pagination.scss
+// Extended from Bootstrap
+//
+
+.pagination-sm .page-link {
+    line-height: $btn-line-height-sm;
+    font-size: $btn-font-size-sm;
+}
+
+.pagination-sm .page-item:first-child .page-link {
+    border-top-left-radius: $btn-border-radius-sm;
+    border-bottom-left-radius: $btn-border-radius-sm;
+}
+
+.pagination-sm .page-item:last-child .page-link {
+    border-top-right-radius: $btn-border-radius-sm;
+    border-bottom-right-radius: $btn-border-radius-sm;
+}
+
+.pagination-lg .page-link {
+    line-height: $btn-line-height-lg;
+    font-size: $btn-font-size-lg;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+    border-top-left-radius: $btn-border-radius-lg;
+    border-bottom-left-radius: $btn-border-radius-lg;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+    border-top-right-radius: $btn-border-radius-lg;
+    border-bottom-right-radius: $btn-border-radius-lg;
+}
+
+.pagination {
+    .page-link {
+        height: 44px;
+        width: 44px;
+        padding: 0;
+        text-align: center;
+        color: $body-color;
+        font-size: $font-size-sm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% !important;
+
+        @extend .shadow;
+    }
+
+    i {font-size: 12px;}
+
+    .page-item {
+        margin: 0 10px;
+
+        &.active .page-link {
+            background-color: $teal;
+            border-color: $teal;
+        }
+    }
+
+    &.pagination-sm {
+        .page-item {
+            margin: 0 6px;
+        }
+
+        i {font-size: 10px;}
+
+        .page-link {
+            height: 34px;
+            width: 34px;
+        }
+    }
+
+    &.pagination-lg {
+        .page-item {
+            margin: 0 12px;
+        }
+
+        i {font-size: 14px;}
+
+        .page-link {
+            height: 54px;
+            width: 54px;
+        }
+    }
+}

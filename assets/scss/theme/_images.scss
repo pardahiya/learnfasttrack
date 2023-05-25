@@ -1,0 +1,211 @@
+//
+// images.scss
+// Extended from Bootstrap
+//
+
+// Image cover
+//
+// Spans the whole with of the viewport
+
+.img-cover {
+  width: 100vw;
+  height: auto;
+  margin-left: calc(50% - 50vw);
+}
+
+// Extending .img-fluid class to support nested images
+
+.img-fluid > img,
+.img-fluid > svg {
+  max-width: inherit;
+  height: inherit;
+}
+
+// Figure
+
+.figure {
+  display: block;
+}
+
+.figure-img {
+  margin-bottom: $spacer;
+}
+
+.o-f-c {
+    object-fit: cover;
+}
+
+
+.bg-darken {
+    .footer-brand {
+        filter: brightness(0) invert(1);
+    }
+
+    .list-social:not(.text-white-70) {
+        img,i {
+            filter: brightness(0) invert(.6);
+        }
+    }
+
+    .list-social {
+        &.text-white-70 {
+            a {
+                color: rgba($white, .7);
+
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    &.bg-porsche .list-social {
+        &.text-white-70 {
+            a {
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    color: $porsche;
+                }
+            }
+        }
+    }
+
+    &.bg-biscay .list-social {
+        &.text-white-70 {
+            a {
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    color: $biscay;
+                }
+            }
+        }
+    }
+
+    &.bg-alizarin .list-social {
+        &.text-white-70 {
+            a {
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    &.bg-dark .list-social {
+        &.text-white-70 {
+            a {
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    color: $dark;
+                }
+            }
+        }
+    }
+}
+
+.dark-70 {
+    .list-social img {
+        filter: brightness(0) invert(.7);
+    }
+
+    .list-social-item a {
+        &:hover,
+        &:focus {
+            img {
+                filter: brightness(100) invert(.8);
+            }
+        }
+    }
+}
+
+.white-img-100 {
+    .list-social img {
+        filter: brightness(0) invert(1);
+    }
+
+    .list-social-item a {
+        &:hover,
+        &:focus {
+            img {
+                filter: brightness(100) invert(.8);
+            }
+        }
+    }
+}
+
+.sk-thumbnail {
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: calc( #{$img-thumbnail-ratio} * 100% );
+
+    img {
+        height: auto;
+        position: absolute;
+        top: calc(50% + 1px);
+        left: calc(50% + 1px);
+        transform: scale(1.01) translate(-50%,-50%);
+        display: block;
+        width: 100%;
+        max-height: none;
+        max-width: none;
+        transition: filter .3s;
+    }
+}
+
+.img-ratio-one {
+    padding-bottom: calc( #{$img-thumbnail-ratio-one} * 100% );
+}
+
+.img-ratio-1 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-1} * 100% );
+}
+
+.img-ratio-2 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-2} * 100% );
+}
+
+.img-ratio-3 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-3} * 100% );
+}
+
+.img-ratio-4 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-4} * 100% );
+}
+
+.img-ratio-5 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-5} * 100% );
+}
+
+.img-ratio-6 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-6} * 100% );
+}
+
+.img-ratio-7 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-7} * 100% );
+}
+
+.img-ratio-8 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-8} * 100% );
+}
+
+.img-ratio-9 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-9} * 100% );
+}
+
+.img-ratio-10 {
+    padding-bottom: calc( #{$img-thumbnail-ratio-10} * 100% );
+}

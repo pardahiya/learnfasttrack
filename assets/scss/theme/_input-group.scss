@@ -1,0 +1,53 @@
+//
+// input-group.scss
+//
+
+// Sizing
+
+.input-group-xs .form-control {
+  height: calc(#{$input-btn-padding-y-xs * 2} + #{$input-btn-font-size-xs} * #{$line-height-base} + #{$input-border-width * 2});
+  padding: $input-btn-padding-y-xs $input-btn-padding-x-xs;
+  font-size: $input-btn-font-size-xs;
+}
+
+.input-group-xs .input-group-text {
+  padding: $input-btn-padding-y-xs $input-btn-padding-x-xs;
+  font-size: $input-btn-font-size-xs;
+}
+
+.input-group {
+    .form-control:focus + .input-group-append .btn {
+        border-color: $primary;
+    }
+}
+
+.input-group-filter {
+    .btn-outline-white {
+        border-color: $border-color;
+    }
+}
+
+.input-group-prepend,
+.input-group-append {
+    display: flex;
+}
+
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

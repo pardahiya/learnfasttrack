@@ -1,0 +1,83 @@
+//FontAwesome 5 Star Rating
+
+.star-rating {
+    position:relative;
+    vertical-align: middle;
+    font-size: $font-size-sm;
+    font-family: 'Font Awesome 5 Free';
+    display:inline-flex;
+    color: $orange;
+    width: 102px;
+
+    &::before,
+    .rating::before {
+        content: "\f005 \f005 \f005 \f005 \f005";
+        letter-spacing: 6px;
+    }
+
+    .rating {
+        position: absolute;
+        left:0;
+        top:0;
+        white-space:nowrap;
+        overflow:hidden;
+        color: $orange;
+
+        &::before {
+            font-weight: 900;
+        }
+    }
+
+    &.star-rating-lg {
+        width: 122px;
+
+        &::before,
+        .rating::before {
+            font-size: $font-size-base;
+            letter-spacing: 8px;
+        }
+    }
+
+    &.secondary {
+        &::before {
+            color: $secondary;
+        }
+    }
+
+}
+
+.slect-rating {
+    border: none;
+    float: left;
+}
+
+.slect-rating > input { display: none; }
+.slect-rating > label:before {
+    margin: 5px;
+    font-size: $font-size-sm;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    content: "\f005";
+}
+
+.slect-rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.slect-rating > label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.slect-rating > input:checked ~ label, /* show gold star when clicked */
+.slect-rating:not(:checked) > label:hover, /* hover current star */
+.slect-rating:not(:checked) > label:hover ~ label { color: $orange;  } /* hover previous stars in list */
+
+.slect-rating > input:checked + label:hover, /* hover current star when changing slect-rating */
+.slect-rating > input:checked ~ label:hover,
+.slect-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.slect-rating > input:checked ~ label:hover ~ label { color: darken($orange, 5%);  }

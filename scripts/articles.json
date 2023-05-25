@@ -1,34 +1,106 @@
 [
    {
-      "subtopic": "HTML",
+      "topic": "html",
       "title": "Introduction to HTML",
-      "content": "HTML is the standard markup language for creating web pages...",
+      "name": "introduction_to_html",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "/html/introduction_to_html.md",
       "level": "basic",
       "tags": ["html", "web development"],
-      "approxCompletionTime": 300
+      "approxCompletionTime": 300,
+      "image": ""
    },
    {
-      "subtopic": "CSS",
+      "topic": "html",
+      "title": "Introduction to HTML",
+      "name": "html_syntax_and_structure",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "/html/html_syntax_and_structure.md",
+      "level": "basic",
+      "tags": ["html", "web development"],
+      "approxCompletionTime": 300,
+      "image": ""
+   },
+   {
+      "topic": "html",
+      "title": "Introduction to HTML",
+      "name": "creating_your_first_html_page",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "/html/creating_your_first_html_page.md",
+      "level": "basic",
+      "tags": ["html", "web development"],
+      "approxCompletionTime": 300,
+      "image": ""
+   },
+   {
+      "topic": "html",
+      "title": "Introduction to HTML",
+      "name": "common_html_elements",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "/html/common_html_elements.md",
+      "level": "basic",
+      "tags": ["html", "web development"],
+      "approxCompletionTime": 300,
+      "image": ""
+   },
+   {
+      "topic": "html",
+      "title": "Introduction to HTML",
+      "name": "html_forms_and_input",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "/html/html_forms_and_input.md",
+      "level": "basic",
+      "tags": ["html", "web development"],
+      "approxCompletionTime": 300,
+      "image": ""
+   },
+   {
+      "topic": "css",
       "title": "Introduction to CSS",
-      "content": "CSS is a stylesheet language used for describing the look and formatting...",
+      "name": "intro_css",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "CSS is a stylesheet language used for describing the look and formatting...",
       "level": "basic",
       "tags": ["css", "web development"],
-      "approxCompletionTime": 300
+      "approxCompletionTime": 300,
+      "image": ""
    },
    {
-      "subtopic": "Python",
+      "topic": "python",
       "title": "Python Basics",
-      "content": "Python is a high-level, interpreted, and general-purpose programming language...",
+      "name": "python_basics",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "Python is a high-level, interpreted, and general-purpose programming language...",
       "level": "basic",
       "tags": ["python", "data science"],
-      "approxCompletionTime": 300
+      "approxCompletionTime": 300,
+      "image": ""
    },
    {
-      "subtopic": "Machine Learning",
+      "topic": "machine_learning",
       "title": "Introduction to Machine Learning",
-      "content": "Machine Learning is a subfield of Artificial Intelligence...",
+      "name": "intro_ml",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
+      "contentPath": "Machine Learning is a subfield of Artificial Intelligence...",
       "level": "basic",
       "tags": ["machine learning", "data science"],
-      "approxCompletionTime": 300
+      "approxCompletionTime": 300,
+      "image": ""
    }
 ]

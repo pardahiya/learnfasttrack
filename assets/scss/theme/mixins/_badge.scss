@@ -1,0 +1,36 @@
+//
+// badge.scss
+// Extended from Bootstrap
+//
+
+@mixin badge-variant-soft($color, $badge-soft-bg-opacity) {
+  background-color: rgba($color, $badge-soft-bg-opacity);
+  color: $color;
+
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      background-color: rgba($color, $badge-soft-bg-opacity * 2);
+      color: $color;
+    }
+  }
+}
+
+@mixin badge-variant($bg) {
+  color: color-yiq($bg);
+  background-color: $bg;
+
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      color: color-yiq($bg);
+      background-color: darken($bg, 10%);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width rgba($bg, .5);
+    }
+  }
+}

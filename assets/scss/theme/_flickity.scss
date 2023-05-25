@@ -1,0 +1,424 @@
+//
+// flickity.scss
+// Library overrides
+//
+
+// Controls
+
+.bg-is-selected {
+    .card {
+        background-color: transparent !important;
+        opacity: .4;
+
+        .card-float {
+            opacity: 0;
+        }
+    }
+
+    .is-selected {
+        .card {
+            background-color: $body-bg !important;
+            opacity: 1;
+        }
+
+        .card-float {
+            opacity: 1;
+        }
+    }
+}
+
+.flickity-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: $white;
+  box-shadow: $box-shadow-light;
+  border: 1px solid $border-color;
+  color: $white;
+
+  &::before, &::after {
+    //font-family: "Feather";
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    box-shadow: $box-shadow;
+    border-color: $primary;
+  }
+}
+
+.flickity-button.previous {
+    left: 2px;
+
+    @include media-breakpoint-up(md) {
+        transform: translate(calc(-50% + #{$grid-gutter-width / 2}), -50%);
+    }
+
+    &::before {
+        content: url(../../assets/img/icons/icon-previous-gray.svg);
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            content: url(../../assets/img/icons/icon-previous-white.svg);
+        }
+    }
+}
+
+.flickity-button.next {
+    right: 2px;
+
+    @include media-breakpoint-up(md) {
+        transform: translate(calc(50% - #{$grid-gutter-width / 2}), -50%);
+    }
+
+    &::before {
+        content: url(../../assets/img/icons/icon-next-gray.svg);
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            content: url(../../assets/img/icons/icon-next-white.svg);
+        }
+    }
+}
+
+.flickity-button-outline {
+    .flickity-button.previous,
+    .flickity-button.next {
+        background-color: transparent;
+        border-width: 2px;
+        width: 60px;
+        height: 60px;
+
+        &:hover,
+        &:focus {
+            background-color: $white;
+            border-color: $white;
+        }
+    }
+
+    .flickity-button.previous {
+        &::before {
+            content: url(../../assets/img/icons/icon-previous-white.svg);
+        }
+
+        &:hover,
+        &:focus {
+            &::before {
+                content: url(../../assets/img/icons/icon-previous-gray.svg);
+            }
+        }
+    }
+
+    .flickity-button.next {
+        &::before {
+            content: url(../../assets/img/icons/icon-next-white.svg);
+        }
+
+        &:hover,
+        &:focus {
+            &::before {
+                content: url(../../assets/img/icons/icon-next-gray.svg);
+            }
+        }
+    }
+}
+
+.button-same-position {
+    .flickity-button.previous,
+    .flickity-button.next {
+        display: none;
+        top: 50%;
+        right: calc(50% - 580px);
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+        }
+    }
+
+    .flickity-button.previous {
+        transform: translate(0%, 100%);
+        left: auto;
+    }
+
+    .flickity-button.next {
+        transform: translate(0%, -65%);
+    }
+}
+
+.flickity-button-icon {
+  display: none;
+}
+
+
+// Button white
+
+.flickity-button-white .flickity-button {
+  background-color: $white;
+  color: $primary;
+}
+
+
+// Button bottom
+
+.flickity-button-bottom .flickity-button {
+  top: auto;
+  bottom: 1.5rem;
+  transform: none;
+}
+
+.flickity-button-bottom .flickity-button.previous {
+  left: auto;
+  right: 6.375rem;
+}
+
+.flickity-button-bottom .flickity-button.next {
+  left: auto;
+  right: 2.5rem;
+}
+
+// Button outset
+.flickity-button-outset .flickity-button.previous {
+
+    @include media-breakpoint-up(xl) {
+        transform: translate(calc(-50% - #{$grid-gutter-width + 9px }), -50%) !important;
+    }
+}
+
+.flickity-button-outset .flickity-button.next {
+
+    @include media-breakpoint-up(xl) {
+        transform: translate(calc(50% + #{$grid-gutter-width + 9px }), -50%) !important;
+    }
+}
+
+.flickity-button-outset-long .flickity-button.previous {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+    }
+
+    @include media-breakpoint-up(wd) {
+        transform: translate(calc(-50% - #{$grid-gutter-width + -100px }), -50%) !important;
+    }
+}
+
+.flickity-button-outset-long .flickity-button.next {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+    }
+
+    @include media-breakpoint-up(wd) {
+        transform: translate(calc(50% + #{$grid-gutter-width + -100px }), -50%) !important;
+    }
+}
+
+.flickity-page-dots-mobile {
+    @include media-breakpoint-up (md) {
+        .flickity-page-dots {
+            display: none !important;
+        }
+    }
+}
+
+.flickity-page-dots-md {
+    @include media-breakpoint-down(md) {
+        .flickity-page-dots {
+            display: none !important;
+        }
+    }
+}
+
+// Button inset
+
+.flickity-button-inset .flickity-button {
+  transform: translateY(-50%);
+}
+
+.flickity-button-inset .flickity-button.previous {
+  left: 1.5rem;
+}
+
+.flickity-button-inset .flickity-button.next {
+  right: 1.5rem;
+}
+
+
+// Viewport
+
+.flickity-viewport-visible .flickity-viewport {
+  overflow: visible;
+}
+
+// Adaptive height
+
+[data-flickity*='"adaptiveHeight": true'] .flickity-viewport {
+  transition: all .5s ease; // Make the transition match the rough duration of flicking between items
+}
+
+
+// Page-dots
+
+.flickity-page-dots {
+    .dot {
+        width: 8px;
+        margin: 0 5px;
+        height: 8px;
+        background-color: $gray-500;
+        opacity: 1;
+
+        &.is-selected {
+            width: 20px;
+            background-color: $primary;
+            border-radius: 20px;
+        }
+    }
+}
+
+.flickity-dot-yellow {
+    .dot {
+        &.is-selected {
+            background-color: $turbo;
+        }
+    }
+}
+
+.flickity-dot-light {
+    .dot {
+        background-color: $white;
+        opacity: .6;
+
+        &.is-selected {
+            background-color: $white;
+            opacity: 1;
+        }
+    }
+}
+
+.flickity-dot-left {
+    .flickity-page-dots {
+        text-align: left;
+    }
+}
+
+.flickity-page-dots-43 {
+    .flickity-page-dots {
+        bottom: 43px;
+    }
+}
+
+.page-dots-custom {
+    .flickity-page-dots {
+        .dot {
+            background-color: #8B4C22;
+
+            &.is-selected {
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.page-dots-custom-1 {
+    .flickity-page-dots {
+        .dot {
+            background-color: rgba(#ABC8BD, .6);
+
+            &.is-selected {
+                background-color: #ABC8BD;
+            }
+        }
+    }
+}
+
+.flickity-page-dots-white {
+    .flickity-page-dots {
+        .dot {
+            width: 6px;
+            height: 6px;
+            margin: 0 14px;
+            background-color: $white;
+            opacity: 1;
+
+            &.is-selected {
+                box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.3);
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.flickity-page-dots-vertical {
+    .flickity-page-dots {
+        transform: translate(0%, -50%);
+        width: auto;
+        top: 50%;
+        bottom: auto;
+
+        @include media-breakpoint-up(wd) {
+            left: 60px;
+        }
+
+        .dot {
+            margin: 28px 0;
+            display: block;
+        }
+    }
+}
+
+// Tab
+.flickity-tab {
+    .tab-pane:not(.active) {
+        display: block !important;
+        height: 0 !important;
+        overflow: hidden;
+        padding: 0 !important;
+    }
+
+    .tab-pane.active {
+        height: auto !important;
+    }
+}
+
+.accordion-flickity {
+    @include media-breakpoint-down(sm) {
+        .collapse {
+            display: block !important;
+            height: 0 !important;
+            overflow: hidden;
+            padding: 0 !important;
+        }
+
+        .collapse.show {
+            height: auto !important;
+            overflow: visible;
+        }
+    }
+}
+
+// Hover items
+
+.flickity-hover-opacity {
+    .card {
+        opacity: .4;
+    }
+
+    .is-selected .card {
+        opacity: 1;
+    }
+
+    @include media-breakpoint-up(xl) {
+        .is-selected + div .card {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,259 @@
+//
+// buttons.scss
+// Extended from Bootstrap
+//
+
+.btn > img {
+  max-height: 1em;
+  width: auto;
+}
+
+.btn:not([class*="btn-outline"]) {
+  border-color: transparent !important;
+}
+
+
+// Sizing
+
+.btn-xs {
+  padding: $input-btn-padding-y-xs $input-btn-padding-x-xs;
+  font-size: $input-btn-font-size-xs;
+}
+
+/* Wide */
+.btn-wide {
+    min-width: $btn-wide;
+}
+
+.btn-sm-wide {
+    min-width: $btn-sm-wide;
+}
+
+.btn-x-wide {
+    min-width: $btn-sm-wide;
+
+    @include media-breakpoint-up(md) {
+        min-width: $btn-x-wide;
+    }
+}
+
+
+// Custom colors
+
+.btn-white {
+  background-color: $white;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: darken($primary, 5%);
+  }
+
+  &.active {
+    background-color: darken($white, 5%);
+    color: darken($primary, 5%);
+  }
+}
+
+.btn-group .btn-white {
+  border-color: $gray-300 !important;
+  color: $text-muted;
+
+  &.active {
+    background-color: darken($white, 5%);
+    color: darken($text-muted, 5%);
+    box-shadow: none;
+  }
+}
+
+.btn-gray-300-20 {
+  background-color: rgba($gray-300, .2);
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($gray-300, .25);
+    color: $white;
+  }
+
+  &.active {
+    background-color: rgba($gray-300, .25);
+    color: $white;
+  }
+}
+
+.btn-gray-400 {
+  background-color: $gray-400;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: darken($gray-400, 5%);
+    color: darken($white, 5%);
+  }
+
+  &.active {
+    background-color: darken($gray-400, 5%);
+    color: darken($white, 5%);
+  }
+}
+
+.btn-gray-400-10 {
+  background-color: rgba($gray-400, .1);
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($gray-400, .15);
+    color: $white;
+  }
+
+  &.active {
+    background-color: rgba($gray-400, .15);
+    color: $white;
+  }
+}
+
+.btn-outline-white {
+  border-color: $gray-300;
+  color: $body-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($white, 5%);
+    border-color: $gray-400;
+    color: $body-color;
+  }
+
+  &.active {
+    background-color: darken($white, 5%);
+    border-color: $gray-400;
+    color: $body-color;
+  }
+}
+
+.btn-outline-gray-300 {
+  border-color: $gray-300;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+
+  &.active {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+}
+
+
+// Soft variants
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color}-soft {
+    @include btn-variant-soft(rgba($value, $btn-soft-bg-opacity), $value);
+  }
+}
+
+.btn-block {
+    width: 100%;
+}
+
+
+// Pill
+
+.btn-pill {
+  border-radius: $border-radius-pill;
+}
+
+
+// Rounded circle
+
+.btn-rounded-circle {
+  padding-left: $btn-padding-y;
+  padding-right: $btn-padding-y;
+  border-radius: $border-radius-pill;
+}
+
+.btn-rounded-circle > * {
+  display: block;
+  line-height: 1;
+  width: 1em;
+}
+
+.btn-rounded-circle.btn-lg {
+  padding-left: $btn-padding-y-lg;
+  padding-right: $btn-padding-y-lg;
+}
+
+.btn-rounded-circle.btn-sm {
+  padding-left: $btn-padding-y-sm;
+  padding-right: $btn-padding-y-sm;
+}
+
+.btn-rounded-circle.btn-xs {
+  padding-left: $btn-padding-y-xs;
+  padding-right: $btn-padding-y-xs;
+}
+
+
+// gradient
+
+.btn-gradient-1 {
+    background: linear-gradient(90deg, #FFA35A 0.26%, #FF2574 100.08%) !important;
+
+    &:hover,
+    &:focus {
+        background: linear-gradient(90deg, darken(#FFA35A, 5%) 0.26%, darken(#FF2574, 5%) 100.08%) !important;
+    }
+}
+
+//btn-slide
+.btn.slide-primary:not([class*=btn-outline]) {
+    border-color: $primary !important;
+}
+
+.btn.slide-white:not([class*=btn-outline]) {
+    border-color: $white !important;
+}
+
+.slide-primary {
+    background: linear-gradient(to left,transparent 50%,$primary 50%);
+    border: 1px solid $primary;
+    border-left: 6px solid $primary;
+    color: $primary;
+
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+}
+
+.slide-white {
+    background: linear-gradient(to left,transparent 50%,$white 50%);
+    border: 1px solid $white;
+    border-left: 6px solid $white;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        color: #77838f;
+    }
+}
+
+.btn-slide {
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease;
+    transition-property: inherit !important;
+
+    &:hover,
+    &:focus {
+        background-position: left bottom;
+    }
+}

@@ -1,0 +1,194 @@
+//
+// borders.scss
+// Extended from Bootstrap
+//
+
+// Responsive widths
+
+@each $width, $widthValue in $container-max-widths {
+
+  @include media-breakpoint-up($width) {
+
+    // Additive
+
+    .border-#{$width} {
+      border: $border-width solid $border-color !important;
+      color: rose;
+    }
+
+    .border-top-#{$width} {
+      border-top: $border-width solid $border-color !important;
+    }
+
+    .border-right-#{$width} {
+      border-right: $border-width solid $border-color !important;
+    }
+
+    .border-bottom-#{$width} {
+      border-bottom: $border-width solid $border-color !important;
+    }
+
+    .border-left-#{$width} {
+      border-left: $border-width solid $border-color !important;
+    }
+
+    // Substractive
+
+    .border-#{$width}-0 {
+      border: 0 !important;
+    }
+
+    .border-top-#{$width}-0 {
+      border-top: 0 !important;
+    }
+
+    .border-right-#{$width}-0 {
+      border-right: 0 !important;
+    }
+
+    .border-bottom-#{$width}-0 {
+      border-bottom: 0 !important;
+    }
+
+    .border-left-#{$width}-0 {
+      border-left: 0 !important;
+    }
+  }
+}
+
+.rounded-top-lg {
+    border-top-left-radius: $border-radius-lg !important;
+    border-top-right-radius: $border-radius-lg !important;
+}
+
+.rounded-right-lg {
+    border-top-right-radius: $border-radius-lg !important;
+    border-bottom-right-radius: $border-radius-lg !important;
+}
+
+.rounded-bottom-lg {
+    border-bottom-right-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
+}
+
+.rounded-left-lg {
+    border-top-left-radius: $border-radius-lg !important;
+    border-bottom-left-radius: $border-radius-lg !important;
+}
+
+.rounded-xl {
+    border-radius: $border-radius-xl !important;
+}
+
+.rounded-top-xl {
+    border-top-left-radius: $border-radius-xl !important;
+    border-top-right-radius: $border-radius-xl !important;
+}
+
+.rounded-right-xl {
+    border-top-right-radius: $border-radius-xl !important;
+    border-bottom-right-radius: $border-radius-xl !important;
+}
+
+.rounded-bottom-xl {
+    border-bottom-right-radius: $border-radius-xl !important;
+    border-bottom-left-radius: $border-radius-xl !important;
+}
+
+.rounded-left-xl {
+    border-top-left-radius: $border-radius-xl !important;
+    border-bottom-left-radius: $border-radius-xl !important;
+}
+
+.rounded-bottom-0 {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.rounded-lg {
+  border-radius: $border-radius-lg !important;
+}
+
+
+// Colors
+
+.border-white-10 {
+  border-color: fade-out($white, .9) !important;
+}
+
+.border-white-20 {
+  border-color: fade-out($white, .8) !important;
+}
+
+.border-white-90 {
+  border-color: fade-out($white, .1) !important;
+}
+
+.border-color-20 {
+  border-color: fade-out($border-color, .8) !important;
+}
+
+.border-gray-300 {
+  border-color: $gray-300 !important;
+}
+
+.border-gray-800 {
+  border-color: $gray-800 !important;
+}
+
+.border-gray-800-50 {
+  border-color: fade-out($gray-800, .5) !important;
+}
+
+.border-gray-900-50 {
+  border-color: rgba($gray-900, .5) !important;
+}
+
+.border-w-md {
+    border-width: 2px !important;
+}
+
+.border-w-lg {
+    border-width: 3px !important;
+}
+
+.border-w-xl {
+    border-width: 5px !important;
+}
+
+.border-style-dashed {
+    border-style: dashed !important;
+}
+
+.border-hover {
+    &:hover,
+    &:focus {
+        border: 1px solid $border-color;
+    }
+}
+
+.border-gradient {
+    background-image:
+    repeating-linear-gradient(to right, rgba($white, .7) 0%, rgba($white, .7) 50%, transparent 50%, transparent 100%),
+    repeating-linear-gradient(to right, rgba($white, .7) 0%, rgba($white, .7) 50%, transparent 50%, transparent 100%),
+    repeating-linear-gradient(to bottom, rgba($white, .7) 0%, rgba($white, .7) 50%, transparent 50%, transparent 100%),
+    repeating-linear-gradient(to bottom, rgba($white, .7) 0%, rgba($white, .7) 50%, transparent 50%, transparent 100%);
+
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
+    border-radius: 12px;
+}
+
+.border-dashed-2 {
+    border: 2px dashed $white;
+}
+
+.outline-0 {
+    outline: 0 !important;
+
+    &:hover,
+    &:focus {
+        outline: 0 !important;
+    }
+}

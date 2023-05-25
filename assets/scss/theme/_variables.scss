@@ -1,0 +1,872 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+//
+// Bootstrap overrides ===================================
+//
+
+// Color system
+
+$white: #FFFFFF !default;
+$gray-100: #F7F9FB !default;
+$gray-200: #E7E7EC !default;
+$gray-300: #D9E2EF !default;
+$gray-400: #C6D3E6 !default;
+$gray-500: #C8C8D6 !default;
+$gray-600: #8C98A4 !default;
+$gray-700: #949DA6 !default;
+$gray-800: #77838F !default;
+$gray-900: #2F2D51 !default;
+$black: #161C2D !default;
+
+$blue:             #196ECD   !default;
+$purple:           #B8B2FD   !default;
+$orange:           #FFC78B   !default;
+$teal:             #4A8F9F   !default;
+$ice:              #9CF6DB   !default;
+$cyan:             #9EF3F6   !default;
+$helio:            #B253F6   !default;
+$white-ice:        #F0FDF8   !default;
+$tropaz:           #2D4F93   !default;
+$roman:            #E0685C   !default;
+$tangerine:        #FF9574   !default;
+$gigas:            #4E35A3   !default;
+$lavender:         #ffebf1   !default;
+$sienna:           #E7643E   !default;
+$coral:            #FE805D   !default;
+$catskill:         #F9FBFC   !default;
+$bossanova:        #452B4F   !default;
+$denim:            #146ECF   !default;
+$turbo:            #FEB800   !default;
+$bright-sun:       #FFD438   !default;
+$shark:            #282A2E   !default;
+$dodger:           #377DFF   !default;
+$cloud-burst:      #21325B   !default;
+$porsche:          #F0B26B   !default;
+$biscay:           #183F63   !default;
+$mongoose:         #BDA588   !default;
+$ebony:            #252837   !default;
+$alizarin:         #EB1C24   !default;
+$astronaut:        #232374   !default;
+$chestnut:         #CF574B   !default;
+$rhino:            #263053   !default;
+$portgore:         #212041   !default;
+
+$primary:          #090761   !default;
+$secondary:        $gray-700 !default;
+$primary-desat:    #6C8AEC   !default; // NEW
+$success:          #DEF2D7   !default;
+$info:             #CDE9F6   !default;
+$warning:          #F7F3D7   !default;
+$danger:           #ECC8C5   !default;
+$light:            $gray-100 !default;
+$dark:             $gray-900 !default;
+
+$theme-colors: () !default;
+
+$theme-colors: (
+    "primary":  $primary,
+    "secondary":  $secondary,
+    "primary-desat":  $primary-desat,
+    "black":          $black,
+    "gray-200":       $gray-200,
+    "gray-800":       $gray-800,
+    "white":          $white,
+    "dark":           $dark,
+    "success":        $success,
+    "info":           $info,
+    "warning":        $warning,
+    "danger":         $danger,
+    "light":          $light,
+    "orange":         $orange,
+    "blue":           $blue,
+    "purple":         $purple,
+    "teal":           $teal,
+    "ice":            $ice,
+    "cyan":           $cyan,
+    "helio":          $helio,
+    "white-ice":      $white-ice,
+    "tropaz":         $tropaz,
+    "roman":          $roman,
+    "tangerine":      $tangerine,
+    "gigas":          $gigas,
+    "lavender":       $lavender,
+    "sienna":         $sienna,
+    "coral":          $coral,
+    "catskill":       $catskill,
+    "bossanova":      $bossanova,
+    "denim":          $denim,
+    "turbo":          $turbo,
+    "bright-sun":     $bright-sun,
+    "shark":          $shark,
+    "dodger":         $dodger,
+    "cloud-burst":    $cloud-burst,
+    "porsche":        $porsche,
+    "biscay":         $biscay,
+    "mongoose":       $mongoose,
+    "ebony":          $ebony,
+    "alizarin":       $alizarin,
+    "chestnut":       $chestnut,
+    "portgore":       $portgore
+);
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-validation-icons: false !default;
+$enable-shadows: true !default;
+$min-contrast-ratio:   3.9 !default;
+$enable-negative-margins:     true;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+    1: ($spacer * .25), // 4px
+    2: ($spacer * .5), // 8px
+    3: ($spacer * .75), // 12px
+    4: $spacer, // 16px
+    5: ($spacer * 1.5), // 24px
+    6: ($spacer * 2), // 32px
+    7: ($spacer * 2.5), // 40px
+    8: ($spacer * 3), // 48px
+    9: ($spacer * 4), // 64px
+    10: ($spacer * 5), // 80px
+    11: ($spacer * 6), // 96px
+    12: ($spacer * 8), // 128px
+    13: ($spacer * 10), // 160px
+    14: ($spacer * 12), // 192px
+    15: ($spacer * 16), // 256px
+    16: ($spacer * 25), // 400px
+  ),
+  $spacers);
+
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge((
+    14: 14%,
+    16: 16px,
+    20: 20%,
+    25: 25%,
+    26p: 26px,
+    28: 28%,
+    36: 36px,
+    40p: 40px,
+    48: 48px,
+    50: 50%,
+    50p: 50px,
+    52: 52px,
+    58: 58px,
+    60p: 60px,
+    65: 65%,
+    70p: 70px,
+    75: 75%,
+    80: 80%,
+    90p: 90px,
+    96: 96%,
+    100p: 100px,
+    100: 100%,
+    110: 110%,
+    120: 120%,
+    120p: 120px,
+    130: 130%,
+    130p: 130px,
+    140: 140%,
+    140p: 140px,
+    150: 150%,
+    152: 152px,
+    174: 174%,
+    180p: 180px,
+    200p: 200px,
+    210p: 210px,
+    220p: 220px,
+    260p: 260px,
+    270p: 270px,
+    280p: 280px,
+    300p: 300px,
+    350p: 350px,
+    450p: 450px,
+    auto: auto),
+  $sizes);
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $gray-100 !default;
+$body-color: $gray-800 !default;
+
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: 1rem !default;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:                        $primary !default;
+$link-hover-decoration:                   none;
+$link-decoration:                         none;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  wd: 1480px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1200px
+) !default;
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-gutter-width: 30px !default;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg: 1.3 !default;
+$line-height-sm: 1.3 !default;
+
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
+
+$border-radius: 0.25rem !default; //4px
+$border-radius-lg: 0.5rem !default; //8px
+$border-radius-xl: 0.937rem !default; //15px
+
+$box-shadow: 0 0.5rem .937rem fade-out($gray-600, .9) !default;
+$box-shadow-lg: 0 1.5rem 4rem fade-out($gray-600, .9) !default;
+
+$box-shadow-light: 0 0.5rem 1.5rem fade-out($gray-600, .95) !default;
+$box-shadow-light-lg: 0 1.5rem 4rem fade-out($gray-600, .95) !default;
+
+$box-shadow-dark: 0 0.5rem 1.5rem fade-out($gray-600, .85) !default;
+$box-shadow-dark-lg: 0 1.5rem 4rem fade-out($gray-600, .85) !default;
+
+$box-shadow-lift: 0 1rem 2.5rem fade-out($gray-600, .9), 0 .5rem 1rem -.75rem fade-out($gray-600, .9) !default;
+$box-shadow-lift-lg: 0 2rem 5rem fade-out($gray-600, .9), 0 .5rem 1rem -.75rem fade-out($gray-600, .95) !default;
+
+$badge-focus-width:                 .2rem !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-base: 'Jost', sans-serif !default;
+
+$font-size-base: 1rem !default; //16px
+$font-size-xxl: 1.625rem !default; //26px
+$font-size-xl: 1.5rem !default; //24px
+$font-size-lg: 1.125rem !default; //18px
+$font-size-sm: 0.875rem !default; //14px
+$font-size-xs: 0.75rem !default; // 12px
+
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+
+$line-height-base: 1.6 !default;
+
+$h1-font-size: 2.187rem !default; //35px
+$h2-font-size: 1.875rem !default; //30px
+$h3-font-size: 1.375rem !default; //22px
+$h4-font-size: 1.25rem !default; //20px
+$h5-font-size: 1.125rem !default; //18px
+$h6-font-size: 1rem !default; //16px
+
+$headings-color:         $dark !default;
+$headings-margin-bottom: .9rem !default;
+$headings-font-weight: $font-weight-medium !default;
+$headings-line-height: 1 !default;
+
+$display1-size: 4.375rem !default; //70px
+$display2-size: 3.75rem !default; //60px
+$display3-size: 3rem !default; //48px
+$display4-size: 2.5rem; //40px
+$display5-size: 3.437rem !default; //55px
+$display6-size: 3.125rem !default; //50px
+
+$display-font-sizes: (
+  1: 4.375rem,
+  2: 3.75rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 3.437rem,
+  6: 3.125rem
+) !default;
+
+$display1-weight: $font-weight-normal !default;
+$display2-weight: $font-weight-normal !default;
+$display3-weight: $font-weight-normal !default;
+$display4-weight: $font-weight-normal !default;
+
+$lead-font-size: 1.125rem !default; //18px
+$lead-font-weight: $font-weight-normal !default;
+
+$blockquote-small-color: $gray-600 !default;
+$blockquote-small-font-size: $font-size-xs !default;
+$blockquote-font-size: 1.25rem !default;
+
+$small-font-size: 88.2% !default;
+
+$text-muted: $gray-600 !default;
+
+$hr-border-color: $border-color !default;
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding: 1.5rem 2rem !default;
+
+$table-bg: $white !default;
+$table-accent-bg: $light !default;
+
+$table-border-color: $border-color !default;
+
+$table-head-bg: $table-bg !default;
+$table-head-color: $body-color !default;
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: 1rem !default;
+$input-btn-padding-x: 1.25rem !default;
+$inut-btn-font-size: $font-size-base !default;
+$input-btn-line-height: 1.64 !default;
+
+$input-btn-focus-width: 0 !default;
+$input-btn-focus-color: transparent !default;
+//$input-btn-focus-box-shadow: none !default;
+
+$input-btn-padding-y-sm: .5625rem !default;
+$input-btn-padding-x-sm: 1rem !default;
+$input-btn-font-size-sm: $font-size-base !default;
+$input-btn-line-height-sm: $line-height-base !default;
+
+$input-btn-padding-y-lg: 1.122rem !default;
+$input-btn-padding-x-lg: 1.5rem !default;
+$input-btn-font-size-lg: $font-size-base !default;
+$input-btn-line-height-lg: $line-height-base !default;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-font-weight: $font-weight-medium !default;
+//$btn-box-shadow: none !default;
+//$btn-active-box-shadow: none !default;
+
+$btn-sm-wide:   $font-size-base * 11.25 !default; //180px
+$btn-wide:      $font-size-base * 12.5 !default; //200px
+$btn-x-wide:    $font-size-base * 15.375 !default; //246px
+
+
+$btn-border-radius-sm: $border-radius !default;
+$btn-border-radius-lg: $border-radius !default;
+
+
+// Forms
+
+$input-bg: $white !default;
+
+$input-btn-line-height:       $line-height-base !default;
+$input-line-height:           $input-btn-line-height !default;
+$input-focus-border-color:    $primary !default;
+$input-padding-y:             $input-btn-padding-y !default;
+
+//$input-height:      calc(1.858em + 2rem + 2px) !default;
+
+$input-color: $body-color !default;
+$input-border-width: $border-width !default;
+$input-border-color: $border-color !default;
+//$input-box-shadow: none !default;
+
+$input-border-radius-sm: $border-radius !default;
+$input-border-radius-lg: $border-radius !default;
+
+$input-placeholder-color: $text-muted !default;
+
+$input-height-border:  $input-border-width * 2 !default;
+
+$input-height:      add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false)) !default;
+
+$form-grid-gutter-width: 20px !default;
+$form-group-margin-bottom: 1rem !default;
+
+$custom-control-gutter:                 .5rem !default;
+$custom-control-indicator-bg: transparent !default;
+$custom-control-indicator-border-width: 1px !default;
+$custom-control-indicator-border-color: $border-color !default;
+$custom-checkbox-indicator-icon-checked: none !default;
+$custom-radio-indicator-icon-checked: none !default;
+$custom-control-indicator-checked-bg: transparent !default;
+$custom-control-indicator-checked-border-color: $primary !default;
+
+// $custom-select-padding-y: $input-padding-y !default;
+// $custom-select-padding-x: $input-padding-x !default;
+$custom-select-font-size: $font-size-sm !default;
+$form-select-padding-y-sm:        .7rem !default;
+
+$custom-select-indicator-padding: 2rem !default;
+$custom-select-bg:                  $input-bg !default;
+$custom-select-padding-x-sm:        .5rem !default;
+$custom-select-bg-size: auto 50% !default;
+$custom-select-indicator-color: $dark !default;
+$custom-select-indicator-color-white: $white !default;
+$custom-select-indicator-color-white-off: rgba($white, .6) !default;
+$custom-select-indicator: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='22' height='36' viewBox='0 0 24 24'%3e%3cpolyline fill='none' stroke='#{$custom-select-indicator-color}' stroke-width='2.8' stroke-linecap='round' points='6 9 12 15 18 9'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-select-indicator-white: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='22' height='36' viewBox='0 0 24 24'%3e%3cpolyline fill='none' stroke='#{$custom-select-indicator-color-white}' stroke-width='2.8' stroke-linecap='round' points='6 9 12 15 18 9'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-select-indicator-white-off: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='22' height='36' viewBox='0 0 24 24'%3e%3cpolyline fill='none' stroke='#{$custom-select-indicator-color-white-off}' stroke-width='2.8' stroke-linecap='round' points='6 9 12 15 18 9'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-select-box-shadow: none !default;
+
+$custom-select-focus-box-shadow: none !default;
+
+$custom-file-button-bg: $gray-200 !default;
+$custom-file-button-color: $gray-700 !default;
+
+$custom-switch-width: 3.75rem !default;
+$custom-switch-indicator-size: 1.25rem !default;
+$custom-switch-indicator-border-radius: $custom-switch-indicator-size / 2 !default;
+
+$input-group-addon-bg: $input-bg !default;
+$input-group-addon-color: $input-placeholder-color;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-min-width: 16.25rem !default;
+$dropdown-padding-y: 1.625rem !default;
+$dropdown-spacer: 0 !default;
+$dropdown-font-size: $font-size-sm !default;
+$dropdown-border-width: 0px !default;
+$dropdown-box-shadow: $box-shadow !default;
+
+$dropdown-link-color: $gray-700 !default;
+$dropdown-link-hover-color: $primary !default;
+$dropdown-link-hover-bg: none !default;
+
+$dropdown-link-active-color: $primary !default;
+$dropdown-link-active-bg: none !default;
+
+$dropdown-item-padding-y: 0 !default;
+$dropdown-item-padding-x: 1.75rem !default;
+
+$dropdown-header-color: $dark !default;
+
+$dropdown-toggle-icon-color: rgba($white, .6) !default;
+
+$dropdown-toggle-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%2377838F' d='M9.84016 0.540385L9.5126 0.210545C9.40951 0.107536 9.27235 0.0507876 9.12577 0.0507876C8.97926 0.0507876 8.84194 0.107536 8.73885 0.210545L5.00224 3.94732L1.26131 0.206399C1.15838 0.10339 1.02107 0.0467224 0.87456 0.0467224C0.728055 0.0467224 0.590655 0.10339 0.487646 0.206399L0.160001 0.534206C-0.0533338 0.747379 -0.0533338 1.09462 0.160001 1.30779L4.61402 5.77783C4.71695 5.88075 4.8541 5.95327 5.00191 5.95327H5.00362C5.1502 5.95327 5.28736 5.88067 5.39029 5.77783L9.84016 1.3199C9.94325 1.21698 9.99984 1.07567 10 0.929169C10 0.782582 9.94325 0.643231 9.84016 0.540385Z'/></svg>") !default;
+
+$dropdown-toggle-icon-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23ffffff' d='M9.84016 0.540385L9.5126 0.210545C9.40951 0.107536 9.27235 0.0507876 9.12577 0.0507876C8.97926 0.0507876 8.84194 0.107536 8.73885 0.210545L5.00224 3.94732L1.26131 0.206399C1.15838 0.10339 1.02107 0.0467224 0.87456 0.0467224C0.728055 0.0467224 0.590655 0.10339 0.487646 0.206399L0.160001 0.534206C-0.0533338 0.747379 -0.0533338 1.09462 0.160001 1.30779L4.61402 5.77783C4.71695 5.88075 4.8541 5.95327 5.00191 5.95327H5.00362C5.1502 5.95327 5.28736 5.88067 5.39029 5.77783L9.84016 1.3199C9.94325 1.21698 9.99984 1.07567 10 0.929169C10 0.782582 9.94325 0.643231 9.84016 0.540385Z'/></svg>") !default;
+
+$dropdown-toggle-icon-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='7' viewBox='0 0 6 10'><path fill='%2377838F' d='M0.540415 0.15984L0.210575 0.4874C0.107566 0.59049 0.0508177 0.72765 0.0508177 0.87423C0.0508177 1.02074 0.107566 1.15806 0.210575 1.26115L3.94735 4.99776L0.206429 8.73869C0.10342 8.84162 0.0467529 8.97893 0.0467529 9.12544C0.0467529 9.27194 0.10342 9.40934 0.20643 9.51235L0.534236 9.84C0.747409 10.0533 1.09465 10.0533 1.30782 9.84L5.77786 5.38598C5.88078 5.28305 5.9533 5.1459 5.9533 4.99809L5.9533 4.99638C5.9533 4.8498 5.8807 4.71264 5.77786 4.60971L1.31993 0.15984C1.21701 0.0567496 1.0757 0.000159955 0.929199 -3.8573e-08C0.782612 -3.21654e-08 0.643261 0.0567496 0.540415 0.15984Z'/></svg>") !default;
+
+$dropdown-toggle-icon-right-custom: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='7' viewBox='0 0 6 10'><path fill='#{$dropdown-toggle-icon-color}' d='M0.540415 0.15984L0.210575 0.4874C0.107566 0.59049 0.0508177 0.72765 0.0508177 0.87423C0.0508177 1.02074 0.107566 1.15806 0.210575 1.26115L3.94735 4.99776L0.206429 8.73869C0.10342 8.84162 0.0467529 8.97893 0.0467529 9.12544C0.0467529 9.27194 0.10342 9.40934 0.20643 9.51235L0.534236 9.84C0.747409 10.0533 1.09465 10.0533 1.30782 9.84L5.77786 5.38598C5.88078 5.28305 5.9533 5.1459 5.9533 4.99809L5.9533 4.99638C5.9533 4.8498 5.8807 4.71264 5.77786 4.60971L1.31993 0.15984C1.21701 0.0567496 1.0757 0.000159955 0.929199 -3.8573e-08C0.782612 -3.21654e-08 0.643261 0.0567496 0.540415 0.15984Z'/></svg>") !default;
+
+
+// Pagination
+
+$pagination-padding-y: $input-btn-padding-y !default;
+$pagination-padding-x: $input-btn-padding-x !default;
+$pagination-padding-y-sm: $input-btn-padding-y-sm !default;
+$pagination-padding-x-sm: $input-btn-padding-x-sm !default;
+$pagination-padding-y-lg: $input-btn-padding-y-lg !default;
+$pagination-padding-x-lg: $input-btn-padding-x-lg !default;
+$pagination-line-height: $line-height-base !default;
+
+
+// Navbar
+$nav-link-padding-y: 1.5rem !default;
+
+$navbar-padding-y: 1.25rem !default;
+$navbar-padding-x: 0 !default;
+
+$navbar-nav-link-padding-x: 1.64rem !default;
+
+$navbar-brand-font-size: 1.5rem !default;
+
+$navbar-brand-height: 3.8rem !default;
+
+$navbar-brand-height-md: 4.5rem !default;
+
+$navbar-dark-color: $white !default;
+$navbar-dark-hover-color: $white !default;
+$navbar-dark-active-color: $white !default;
+$navbar-dark-toggler-border-color: transparent !default;
+
+$navbar-light-color: $gray-800 !default;
+$navbar-light-hover-color: $primary !default;
+$navbar-light-active-color: $primary !default;
+$navbar-light-toggler-border-color: transparent !default;
+
+
+// Cards
+
+$card-spacer-x: 2rem !default;
+$card-spacer-y: 1.5rem !default;
+$card-border-width: 0px !default;
+$card-border-color: $border-color !default;
+
+
+// Popovers
+
+$popover-max-width: 380px !default;
+$popover-border-color: transparent !default;
+$popover-border-radius: $border-radius !default;
+$popover-box-shadow: $box-shadow-lg !default;
+
+$popover-header-bg: transparent !default;
+$popover-header-padding-y: 1.5rem !default;
+$popover-header-padding-x: 2rem !default;
+
+$popover-body-color: $text-muted !default;
+$popover-body-padding-y: 1.5rem !default;
+$popover-body-padding-x: 2rem !default;
+
+$popover-arrow-width: 1.25rem !default;
+$popover-arrow-height: 0.625rem !default;
+
+
+// Toasts
+
+$toast-padding-y: .5rem !default;
+
+
+// Badges
+
+$badge-padding-y: .25rem !default;
+$badge-padding-x: .75rem !default;
+
+$badge-pill-padding-x: $badge-padding-x !default;
+$badge-pill-padding-x:              .6em !default;
+
+
+// Modals
+
+$modal-inner-padding: 2.5rem !default;
+$modal-backdrop-opacity: .8 !default;
+
+$modal-sidebar: 300px !default;
+$modal-sidebar-md: 460px !default;
+
+
+// Alerts
+
+$alert-bg-level: 0 !default;
+$alert-border-level: 0 !default;
+$alert-color-level: 6 !default;
+$alert-bg-scale:                -50% !default;
+$alert-color-scale:             50% !default;
+
+
+// List group
+
+$list-group-border-color: $border-color !default;
+$list-group-item-padding-y: 1.5rem !default;
+$list-group-item-padding-x: 2rem !default;
+
+
+// Figures
+
+$figure-caption-font-size: $small-font-size !default;
+$figure-caption-color: $text-muted !default;
+
+
+// Breadcrumbs
+
+$breadcrumb-padding-y: .75rem !default;
+$breadcrumb-padding-x: 0 !default;
+
+$breadcrumb-margin-bottom: 0 !default;
+
+$breadcrumb-divider-color: $gray-700 !default;
+$breadcrumb-active-color: $gray-700 !default;
+
+$breadcrumb-bg: transparent !default;
+
+$breadcrumb-border-radius: 0 !default;
+
+
+// Close
+
+$close-color: $text-muted;
+$close-text-shadow: none !default;
+
+
+// Code
+
+$code-font-size: 0.8125rem !default;
+
+
+//
+// Theme ===================================
+//
+
+// Paths
+
+$path-to-img: "../img" !default;
+$path-to-fonts: "../fonts" !default;
+
+
+// Typography
+
+$headings-letter-spacing: -.01em !default;
+
+$h1-line-height: 1.3 !default;
+$h2-line-height: 1.35 !default;
+$h3-line-height: 1.4 !default;
+$h4-line-height: 1.45 !default;
+$h5-line-height: 1.5 !default;
+$h6-line-height: 1.55 !default;
+
+$display1-line-height: 1.2 !default;
+$display2-line-height: 1.2 !default;
+$display3-line-height: 1.2 !default;
+$display4-line-height: 1.2 !default;
+
+$display-letter-spacing: -.02em !default;
+
+$h1-font-size-md: 1.625rem !default; // 26px
+$h2-font-size-md: 1.5rem !default; // 24px
+$h3-font-size-md: 1.125rem !default; // 18px
+$h4-font-size-md: 1rem !default; // 16px
+
+$display1-size-md: 3.125rem !default; // 48px
+$display2-size-md: 2.5rem !default; // 38px
+$display3-size-md: 2.25rem !default; // 36px
+$display4-size-md: 2rem !default; // 32px
+
+$font-size-lg-md: 1rem !default; // 16px
+$font-size-xl-md: 1.25rem !default; // 20px
+
+$blockquote-small-font-weight: $font-weight-bold !default;
+$blockquote-small-letter-spacing: .07em !default;
+
+$letter-spacing-lg: .08em !default;
+
+
+// Buttons + Forms
+
+$input-btn-padding-y-xs: .25rem !default;
+$input-btn-padding-x-xs: .625rem !default;
+$input-btn-font-size-xs: $font-size-sm !default;
+$input-btn-line-height-xs: $line-height-base !default;
+
+
+// Buttons
+
+$btn-soft-bg-opacity: .1 !default;
+
+$btn-padding-y-xs: $input-btn-padding-y-xs !default;
+$btn-padding-x-xs: $input-btn-padding-x-xs !default;
+$btn-line-height-sm:          1.5 !default;
+$btn-line-height-lg:1.5 !default;
+
+$positions: static, relative, absolute, fixed, sticky !default;
+
+// Forms
+
+$input-padding-y-xs: $input-btn-padding-y-xs !default;
+$input-padding-x-xs: $input-btn-padding-x-xs !default;
+$input-font-size-xs: $input-btn-font-size-xs !default;
+$input-line-height-xs: $input-btn-line-height-xs !default;
+$input-height-xs: calc(#{$input-btn-padding-y-xs * 2} + #{$input-btn-font-size-xs} * #{$input-line-height-xs} + #{$input-border-width * 2});
+
+$input-padding-y-sm: $input-btn-padding-y-sm !default;
+$input-padding-x-sm: $input-btn-padding-x-sm !default;
+$input-font-size-sm: $input-btn-font-size-sm !default;
+$input-line-height-sm: $input-btn-line-height-sm !default;
+$input-height-sm: add($input-line-height-sm * 1.18em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
+
+$custom-switch-height: 1.875rem !default;
+$custom-switch-spacing: ($custom-switch-height - $custom-switch-indicator-size) / 2 !default;
+
+$custom-switch-indicator-bg: $secondary !default;
+$custom-switch-indicator-active-bg: $white !default;
+
+$custom-switch-bg-dark: fade-out($white, .8) !default;
+$custom-switch-indicator-bg-dark: $white !default;
+
+$custom-switch-active-bg-dark: $white !default;
+$custom-switch-active-indicator-bg-dark: $primary !default;
+
+$custom-select-padding-y-xs: $input-padding-y-xs !default;
+$custom-select-padding-x-xs: $input-padding-x-xs !default;
+$custom-select-font-size-xs: $input-font-size-xs !default;
+$custom-select-line-height-xs: $input-line-height-xs !default;
+$custom-select-height-xs: $input-height-xs !default;
+$custom-select-indicator-padding-xs: 1.25rem !default;
+
+
+// Navbar
+
+$navbar-brand-font-weight: $font-weight-bold !default;
+
+$navbar-nav-link-font-weight: $font-weight-medium !default;
+
+$navbar-nav-item-spacing: 1.5rem !default;
+
+$navbar-dropdown-toggle-margin-bottom: 1.5rem !default;
+
+
+// Dropdowns
+
+$dropdown-item-padding-x-lg: 2rem !default;
+$dropdown-item-spacing-y: .45rem !default;
+
+$dropdown-padding-x: $dropdown-item-padding-x !default;
+$dropdown-padding-x-xs: 1.25rem !default;
+$dropdown-padding-y-xs: 1rem !default;
+$dropdown-padding-x-lg: $dropdown-item-padding-x-lg !default;
+$dropdown-padding-y-lg: 2rem !default;
+
+$dropdown-min-width-xs: 0 !default;
+$dropdown-min-width-md: 20rem !default; //320px
+$dropdown-min-width-lg: 39.5rem !default; //632px
+$dropdown-min-width-xl: 46rem !default; // 736px
+
+
+// Card
+
+$card-meta-spacer-y: 1.5rem !default;
+
+$card-row-spacer-y: 4rem !default;
+$card-row-spacer-x: 2.5rem !default;
+
+
+// Popover
+
+$popover-header-font-size: $h6-font-size !default;
+$popover-header-color: $primary !default;
+
+
+// Badges
+
+$badge-padding-y-lg: .7em !default;
+$badge-padding-x-lg: 1.15em !default;
+
+$badge-soft-bg-opacity: .1 !default;
+$badge-pill-border-radius:          10rem !default;
+
+
+// List
+
+$list-item-spacing-y: .35rem;
+
+$list-link-font-size: $font-size-sm !default;
+$list-link-color: $gray-700 !default;
+$list-link-hover-color: $primary !default;
+
+
+// Breadcrumbs
+
+$breadcrumb-font-size: $font-size-sm !default;
+
+
+// Code
+
+$code-line-height: 1.35 !default;
+
+
+// Avatar
+
+$avatar-size-base: 1.875rem !default; //30px
+$avatar-size-xs: 1rem !default; //16px
+$avatar-size-sm: 1.5rem !default; //24px
+$avatar-size-lg: 3.125rem !default; //50px
+$avatar-size-xl: 4.125rem !default; //66px
+$avatar-size-xxl: 5rem !default; //80px
+$avatar-size-110: 6.875rem !default; //110px
+$avatar-size-120: 7.5rem !default; //120px
+$avatar-size-custom: 4.375rem !default; //70px
+
+$avatar-title-bg: $gray-500 !default;
+$avatar-title-color: $white !default;
+
+
+// Icons
+
+$icon-size-base: 3rem !default;
+$icon-size-uxs: 1rem !default;
+$icon-size-xs: 1.25rem !default;
+$icon-size-sm: 2.25rem !default;
+$icon-size-md: 3.75rem !default;
+$icon-size-lg: 4rem !default;
+$icon-size-xl: 5rem !default;
+
+$icon-size-45: 2.812rem !default;
+
+$icon-circle-size: 4.1875rem !default;
+$icon-circle-lg-size: 6.125rem !default;
+$icon-circle-font-size: 1.875rem !default;
+
+
+// Images
+
+$img-skewed-rotate-y: 35deg !default;
+$img-skewed-rotate-x: 15deg !default;
+$img-thumbnail-ratio: 0.62 !default;
+$img-thumbnail-ratio-one: 1 !default;
+$img-thumbnail-ratio-1: 0.789 !default;
+$img-thumbnail-ratio-2: 0.769 !default;
+$img-thumbnail-ratio-3: 0.715 !default;
+$img-thumbnail-ratio-4: 0.96 !default;
+$img-thumbnail-ratio-5: 0.523 !default;
+$img-thumbnail-ratio-6: 0.815 !default;
+$img-thumbnail-ratio-7: 0.31 !default;
+$img-thumbnail-ratio-8: 0.828 !default;
+$img-thumbnail-ratio-9: 0.694 !default;
+$img-thumbnail-ratio-10: 0.740 !default;
+
+// Screenshot
+
+$screenshot-border-radius: 0.625rem !default;
+$screenshot-box-shadow: 25px 60px 125px -25px fade-out($gray-700, .9), 16px 40px 75px -40px fade-out(black, .8) !default;

@@ -1,0 +1,39 @@
+
+          <!-- Navigation -->
+          <!-- <ul class="navbar-nav ms-auto">
+              <li class="nav-item dropdown dropdown-full-width">
+                  <a class="nav-link dropdown-toggle px-xl-4" id="navbarLandings" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                      Tutorials
+                  </a>
+                  <div class="dropdown-menu border-xl shadow-none dropdown-full pt-xl-7 px-xl-8" aria-labelledby="navbarLandings">
+                      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
+                        <% tutorials.slice(0,10).forEach(tutorial => { %>
+                          <div class="col mb-5 col-wd-auto">
+                            <a class="dropdown-item" href="/tutorials/<%= tutorial.name %>" target="_blank">
+                                <img src="<%= tutorial.image %>" class="img-fluid shadow rounded border d-flex mx-auto mb-5 h-md-152" alt="<%= tutorial.title %>">
+                                <h6 class="text-center mb-0"><%= tutorial.title %></h6>
+                            </a>
+                          </div>
+                        <% }) %>  
+                      </div>
+                  </div>
+              </li>
+          </ul> -->
+
+
+          <%= topics.find(topic => topic.name === tutorial.topic).title %>
+
+          <div class="d-lg-flex align-items-center mb-6 mb-xl-0">
+            <p class="mb-lg-0">Browse Categories</p>
+            <div class="ms-lg-auto d-lg-flex flex-wrap">
+                <div class="mb-4 mb-lg-0 ms-lg-6">
+                    <div class="border rounded d-flex align-items-center choices-label h-50p">
+                        <span class="ps-5">Sort by:</span>
+                        <select class="form-select form-select-sm text-dark border-0 ps-1 bg-transparent flex-grow-1 shadow-none dropdown-menu-end" data-choices>
+                            <option>Default</option>
+                            <option>New Tutorials</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>

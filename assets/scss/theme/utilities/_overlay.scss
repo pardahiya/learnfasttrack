@@ -1,0 +1,90 @@
+//
+// overlay.scss
+// Theme utility
+//
+
+.overlay {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: inherit;
+  }
+}
+
+
+// Colors
+
+@each $color, $value in $theme-colors {
+
+  // Solid
+  .overlay-#{$color} {
+    @include overlay($value);
+  }
+
+  // Gradient
+  .overlay-gradient-#{$color}-right {
+    @include overlay-gradient($value, right);
+  }
+  .overlay-gradient-#{$color}-down {
+    @include overlay-gradient($value, bottom);
+  }
+  .overlay-gradient-#{$color}-left {
+    @include overlay-gradient($value, left);
+  }
+}
+
+
+// Opacity
+
+@for $i from 1 through 9 {
+  .overlay-#{$i * 10} {
+
+    &::before {
+      opacity: #{$i / 10};
+    }
+  }
+}
+
+.grayscal-hover {
+    filter: grayscale(1);
+
+    &:hover,
+    &:focus {
+        filter: grayscale(0);
+    }
+}
+
+.overlay-lg-none {
+    @include media-breakpoint-up(lg) {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.overlay-custom::before {
+    background: linear-gradient(0deg, rgba(69, 43, 79, 0.6), rgba(69, 43, 79, 0.6)), linear-gradient(0deg, #452B4F 7.65%, rgba(255, 255, 255, 0) 78.19%);
+}
+
+.overlay-custom-left::before {
+    background: linear-gradient(0deg, rgba(9, 7, 97, 0.6), rgba(9, 7, 97, 0.6)), linear-gradient(270deg, #090761 17.76%, rgba(255, 255, 255, 0) 100%);
+}
+
+.overlay-custom-blue::before {
+    background: linear-gradient(0deg, rgba(23, 62, 98, 0.3), rgba(23, 62, 98, 0.3)), linear-gradient(252.15deg, rgba(23, 62, 98, 0.3) 14.62%, #173E62 70.59%);
+}
+
+.overlay-custom-gray::before {
+    background: linear-gradient(0deg, rgba(37, 40, 55, 0.6), rgba(37, 40, 55, 0.6));
+}
+
+.overlay-custom-collage::before {
+    background: linear-gradient(288.36deg, rgba(254, 190, 68, 0.9) 22.61%, rgba(255, 142, 113, 0.9) 43.82%, rgba(15, 138, 194, 0.9) 79.04%);
+}
+
+.overlay-custom-dark::before {
+    background: linear-gradient(0deg, rgba(40, 42, 46, 0.7), rgba(40, 42, 46, 0.7));
+}

@@ -1,0 +1,88 @@
+//
+// modals.scss
+// Extended from Bootstrap
+//
+
+.modal-open .navbar.fixed-top {
+  padding-right: inherit;
+}
+
+
+// Close
+
+.modal-close {
+  position: absolute;
+  top: $spacer * 1.5;
+  right: $spacer * 1.5;
+  z-index: $zindex-dropdown;
+}
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+}
+
+.modal-sidebar {
+    .modal-dialog {
+        max-width: $modal-sidebar;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        height: 100vh;
+
+        @include media-breakpoint-up(md) {
+            max-width: $modal-sidebar-md;
+        }
+    }
+
+    .modal-header {
+        border-width: 0;
+        margin-bottom: 2.5rem;
+    }
+
+    .modal-body,
+    .modal-header {
+        padding: 0;
+    }
+
+    .close {
+        opacity: 1;
+    }
+
+    .modal-content {
+        box-shadow: none;
+        border-radius: 0;
+        border-width: 0;
+        padding: 1.75rem 1.5rem;
+
+        @include media-breakpoint-up(md) {
+            padding: 2.75rem 2.5rem;
+        }
+    }
+
+    &.fade-left:not(.show) {
+        .modal-dialog {
+            transform: translate(50px,0);
+        }
+    }
+
+    &.fade-right:not(.show) {
+        .modal-dialog {
+            transform: translate(-50px,0);
+        }
+    }
+
+    &.left {
+        .modal-dialog {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+
+    &.right {
+        .modal-dialog {
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+//
+// grid.scsss
+// Extended from Bootstrap
+//
+
+[class^="container"] {
+  position: relative;
+  z-index: 1;
+}
+
+.container-wd {
+    @include media-breakpoint-up(wd) {
+        max-width: 1445px;
+    }
+}

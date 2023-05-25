@@ -1,0 +1,219 @@
+//
+// type.scss
+// Extended from Bootstrap
+//
+
+// Headings
+
+h1, .h1 {
+  line-height: $h1-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h1-font-size-md;
+  }
+}
+
+h2, .h2 {
+  line-height: $h2-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h2-font-size-md;
+  }
+}
+
+h3, .h3 {
+  line-height: $h3-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h3-font-size-md;
+  }
+}
+
+h4, .h4 {
+  line-height: $h4-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h4-font-size-md;
+  }
+}
+
+h5, .h5 {
+    line-height: $h5-line-height;
+
+    @include media-breakpoint-down(md) {
+        font-size: $h4-font-size-md;
+    }
+}
+
+h6, .h6 {
+  line-height: $h6-line-height;
+
+  &.text-uppercase {
+    letter-spacing: .08em;
+  }
+}
+
+// Blockquote
+
+blockquote {
+    padding: 34px;
+    background-color: $body-bg;
+    border-radius: $border-radius;
+    margin-bottom: 3.4rem;
+
+    @include media-breakpoint-up(md) {
+        padding: 40px 52px 35px;
+    }
+
+    p {
+        font-size: $h5-font-size;
+        color: $dark;
+        font-style: italic;
+
+        cite {
+            margin-top: 14px;
+        }
+    }
+
+    p:only-child {
+        margin-bottom: 0;
+    }
+
+    cite {
+        color: $gray-800;
+        font-style: normal;
+        display: block;
+        font-size: $h6-font-size;
+    }
+}
+
+
+// Display
+
+.display-1 {
+  line-height: $display1-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $display1-size-md;
+  }
+}
+
+.display-2 {
+  line-height: $display2-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $display2-size-md;
+  }
+}
+
+.display-3 {
+  line-height: $display3-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $display3-size-md;
+  }
+}
+
+.display-4 {
+  line-height: $display4-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: $display4-size-md;
+  }
+}
+
+.display-5 {
+    line-height: $display4-line-height;
+    font-size: $display5-size;
+
+    @include media-breakpoint-down(md) {
+        font-size: $display4-size-md;
+    }
+}
+
+.display-6 {
+    line-height: $display4-line-height;
+    font-size: $display6-size;
+
+    @include media-breakpoint-down(md) {
+        font-size: $display4-size-md;
+    }
+}
+
+
+// Lead
+
+.lead {
+    line-height: 1.7;
+
+    @include media-breakpoint-down(md) {
+        font-size: $h4-font-size-md;
+    }
+}
+
+
+// Blockquote
+
+.blockquote-img {
+  max-height: 2.5rem;
+  max-width: 100%;
+  width: auto;
+}
+
+.blockquote-footer {
+
+  &::before {
+    display: none;
+  }
+}
+
+
+// Social list
+
+.list-social-icon {
+  max-width: 1rem;
+  height: auto;
+}
+
+
+// Dividers
+
+.hr-sm {
+  width: 60px;
+  border-top-width: $border-width * 2;
+}
+
+.hr-md {
+  width: 100px;
+  border-top-width: $border-width * 2;
+}
+
+
+// Code
+
+code {
+  line-height: $code-line-height;
+}
+
+
+ins {
+    text-decoration: none;
+}
+
+// line-height
+
+.line-height-one {
+    line-height: 1;
+}
+
+.line-height-sm {
+    line-height: 1.7;
+}
+
+.line-height-md {
+    line-height: 1.9;
+}
+
+.line-height-lg {
+    line-height: 2;
+}

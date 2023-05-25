@@ -1,0 +1,158 @@
+//
+// dropdown.scss
+// Extended from Bootstrap
+//
+
+.dropdown-menu {
+  padding-left: $dropdown-padding-x;
+  padding-right: $dropdown-padding-x;
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+}
+
+.dropdown-menu-end {
+    + .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+}
+
+.dropdown-menu-start {
+    + .dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+}
+
+// Item
+
+.dropdown-item {
+  width: auto;
+  min-width: 100%;
+  margin-left: -$dropdown-padding-x;
+  margin-right: -$dropdown-padding-x;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown-item + .dropdown-item {
+  margin-top: $dropdown-item-spacing-y;
+}
+
+
+// Link (optional)
+
+.dropdown-link {
+  color: inherit;
+
+  &:hover {
+    text-decoration: inherit;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+
+// Header
+
+.dropdown-header {
+    margin-left: -$dropdown-padding-x;
+    margin-right: -$dropdown-padding-x;
+    padding-top: 0;
+    padding-bottom: $headings-margin-bottom;
+    font-size: $h6-font-size;
+    font-weight: $font-weight-medium;
+    line-height: $h6-line-height;
+    text-transform: capitalize;
+
+    @include media-breakpoint-up(xl) {
+        font-size: $h5-font-size;
+    }
+}
+
+
+// Toggle
+
+.dropdown-toggle::after {
+    vertical-align: middle;
+    border: none !important;
+    content: $dropdown-toggle-icon;
+    margin-top: -6px;
+}
+
+.navbar-dark .dropdown-toggle::after {
+    content: $dropdown-toggle-icon-dark;
+}
+
+.dropright > .dropdown-toggle::after {
+    content: $dropdown-toggle-icon-right;
+    margin-top: 0;
+}
+
+
+// Sizing
+
+.dropdown-full-width {
+    position: static;
+
+    > .dropdown-menu {
+        min-width: 100%;
+    }
+}
+
+.dropdown-menu-xs {
+  min-width: $dropdown-min-width-xs;
+  padding: $dropdown-padding-y-xs $dropdown-padding-x-xs;
+}
+
+.dropdown-menu-md {
+  min-width: $dropdown-min-width-md;
+}
+
+.dropdown-menu-lg {
+  min-width: $dropdown-min-width-lg;
+}
+
+.dropdown-menu-xl {
+  min-width: $dropdown-min-width-xl;
+}
+
+.dropdown-menu-lg,
+.dropdown-menu-xl {
+  padding: $dropdown-padding-y-lg $dropdown-padding-x-lg;
+}
+
+.dropdown-menu-lg .dropdown-item,
+.dropdown-menu-xl .dropdown-header {
+  margin-left: -$dropdown-padding-x-lg;
+  margin-right: -$dropdown-padding-x-lg;
+  padding-left: $dropdown-item-padding-x-lg;
+  padding-right: $dropdown-item-padding-x-lg;
+}
+
+
+// Positioning
+
+.dropright > .dropdown-menu {
+    top: -$dropdown-padding-y;
+    right: auto;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.dropleft .dropdown-menu {
+    top: 0;
+    right: 100%;
+    left: auto;
+    margin-top: 0;
+    margin-right: 0;
+}

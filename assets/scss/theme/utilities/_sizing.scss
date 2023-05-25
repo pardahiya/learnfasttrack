@@ -1,0 +1,113 @@
+//
+// sizing.scss
+// Extended from Bootstrap
+//
+
+@each $size, $sizeValue in $sizes {
+
+  // Percentage
+
+  .mw-#{$size} {
+    max-width: $sizeValue !important;
+  }
+
+  // Viewport units
+
+  .vw-#{$size} {
+    width: #{$size}vw !important;
+  }
+
+}
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+
+
+// Responsive
+
+@each $width, $widthValue in $container-max-widths {
+
+    @include media-breakpoint-up($width) {
+
+        @each $size, $sizeValue in $sizes {
+
+            // Percentage
+
+            .h-#{$width}-#{$size} {
+                height: $sizeValue !important;
+            }
+
+            .w-#{$width}-#{$size} {
+                width: $sizeValue !important;
+            }
+
+            .mw-#{$width}-#{$size} {
+                max-width: $sizeValue !important;
+            }
+
+            // Viewport units
+
+            .vh-#{$width}-#{$size} {
+                height: #{$size}vh;
+            }
+
+            .vw-#{$width}-#{$size} {
+                width: #{$size}vw;
+            }
+
+        }
+    }
+}
+
+
+// Cover
+//
+// Spans the container till the edge of the viewport
+
+.w-cover {
+    @each $width, $value in $container-max-widths {
+        @include media-breakpoint-up(#{$width}) {
+            width: calc(100% + (100vw - #{$value}) / 2 + #{$grid-gutter-width});
+        }
+    }
+}
+
+.min-width-140 {
+    min-width: 140px;
+}
+
+.mw-100-all * {
+    max-width: 100%;
+}
+
+.mh-50 {
+    min-height: 50px;
+}
+
+.min-height-70 {
+    min-height: 70px;
+}
+
+.min-height-80 {
+    min-height: 80px;
+}
+
+.size-20-all * {
+    width: 20px;
+    height: 20px;
+}
+
+.size-30-all * {
+    width: 30px;
+    height: 30px;
+}
+
+.mw-xl-20p {
+    @include media-breakpoint-up(xl) {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}

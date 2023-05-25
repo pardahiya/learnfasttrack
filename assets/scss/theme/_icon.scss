@@ -1,0 +1,122 @@
+//
+// icon.scss
+// Theme component
+//
+
+
+.icon > svg {
+  width: $icon-size-base;
+  height: $icon-size-base;
+}
+
+// Use "text-" utilities to fill svg icons
+.icon[class*="text-"] > svg [fill]:not([fill="none"]) {
+  fill: currentColor !important;
+}
+
+
+// Sizing
+
+.icon-uxs > svg {
+  width: $icon-size-uxs;
+  height: $icon-size-uxs;
+}
+
+.icon-xs > svg {
+  width: $icon-size-xs;
+  height: $icon-size-xs;
+}
+
+.icon-sm > svg {
+  width: $icon-size-sm;
+  height: $icon-size-sm;
+}
+
+.icon-md > svg {
+  width: $icon-size-md;
+  height: $icon-size-md;
+}
+
+.icon-lg > svg {
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+}
+
+.icon-xl > svg {
+  width: $icon-size-xl;
+  height: $icon-size-xl;
+}
+
+.icon-45 > svg {
+  width: $icon-size-45;
+  height: $icon-size-45;
+}
+
+
+// Circle
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $icon-circle-size;
+  height: $icon-circle-size;
+  border-radius: 50%;
+
+  > .fe {
+    font-size: $icon-circle-font-size;
+  }
+}
+
+.icon-circle-lg {
+    width: $icon-circle-lg-size;
+    height: $icon-circle-lg-size;
+}
+
+.icon-category {
+    .icon-h-p {
+        path,i {
+            transition: $btn-transition;
+        }
+
+        i {
+            color: $gray-800;
+        }
+
+        &.secondary i {color: $secondary;}
+    }
+
+    &:hover,
+    &:focus {
+        .icon-h-p {
+            path {
+                fill: $primary !important;
+            }
+
+            i {
+                color: $primary;
+            }
+        }
+    }
+
+    i {
+        font-size: 46px;
+    }
+}
+
+.icon-category-sm {
+    i {
+        font-size: 40px;
+    }
+}
+
+.hover-gradient-1 {
+    &:hover,
+    &:focus {
+        background: linear-gradient(90deg, #FFA35A 0.26%, #FF2574 100.08%) !important;
+
+        .text-gigas {
+            color: $white !important;
+        }
+    }
+}

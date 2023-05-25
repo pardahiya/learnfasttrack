@@ -1,0 +1,69 @@
+//
+// visibility.scss
+// Extended from Bootstrap
+//
+*:focus {
+    outline: transparent
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+
+.opacity-dot-7 {
+    opacity: .7;
+}
+
+.opacity-hover {
+    opacity: .4;
+    color: $dark;
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        color: $primary;
+
+        .font-size-lg {
+            text-decoration: underline;
+        }
+    }
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-md-visible {
+    @include media-breakpoint-up(md) {
+        overflow: visible !important;
+    }
+}
+
+.d-370-block {
+    @media (min-width: 370px) and (max-width: 1199px) {
+        display: block !important;
+    }
+}
+
+.search-mobile[aria-expanded="false"],
+.sidebar-collapse > a[aria-expanded="false"] {
+    svg:not(:first-child) {
+        display: none;
+    }
+}
+
+.search-mobile[aria-expanded="true"],
+.sidebar-collapse > a[aria-expanded="true"] {
+    svg:first-child {
+        display: none;
+    }
+}
+
+.filter-none {
+    filter: none !important;
+}

@@ -1,34 +1,156 @@
 [
    {
-      "subtopic": "HTML",
+      "topic": "html",
       "title": "HTML Beginner's Guide",
+      "name": "html_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
       "description": "A step-by-step guide to learning HTML for beginners.",
       "level": "basic",
-      "tags": ["html", "web development"],
-      "articles": ["Introduction to HTML"]
+      "tags": ["html", "web development"]
    },
    {
-      "subtopic": "CSS",
+      "topic": "css",
       "title": "CSS Beginner's Guide",
+      "name": "css_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
       "description": "A step-by-step guide to learning CSS for beginners.",
       "level": "basic",
-      "tags": ["css", "web development"],
-      "articles": ["Introduction to CSS"]
+      "tags": ["css", "web development"]
    },
    {
-      "subtopic": "Python",
+      "topic": "python",
       "title": "Python Beginner's Guide",
+      "name": "python_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
       "description": "A step-by-step guide to learning Python for beginners.",
       "level": "basic",
-      "tags": ["python", "data science"],
-      "articles": ["Python Basics"]
+      "tags": ["python", "data science"]
    },
    {
-      "subtopic": "Machine Learning",
+      "topic": "Machine Learning",
       "title": "Machine Learning Beginner's Guide",
+      "name": "ml_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "17-06-2023",
+      "updated": "17-06-2023",
       "description": "A step-by-step guide to learning Machine Learning for beginners.",
       "level": "basic",
-      "tags": ["machine learning", "data science"],
-      "articles": ["Introduction to Machine Learning"]
+      "tags": ["machine learning", "data science"]
+   },
+   {
+      "topic": "javaScript",
+      "title": "JavaScript Beginner's Guide",
+      "name": "javascript_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "20-06-2023",
+      "updated": "20-06-2023",
+      "description": "A step-by-step guide to learning JavaScript for beginners.",
+      "level": "basic",
+      "tags": ["javascript", "web development"]
+   },
+   {
+      "topic": "react",
+      "title": "React Beginner's Guide",
+      "name": "react_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "22-06-2023",
+      "updated": "22-06-2023",
+      "description": "A step-by-step guide to learning React for beginners.",
+      "level": "basic",
+      "tags": ["react", "web development"]
+   },
+   {
+      "topic": "java",
+      "title": "Java Beginner's Guide",
+      "name": "java_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "25-06-2023",
+      "updated": "25-06-2023",
+      "description": "A step-by-step guide to learning Java for beginners.",
+      "level": "basic",
+      "tags": ["java", "programming"]
+   },
+   {
+      "topic": "angular",
+      "title": "Angular Beginner's Guide",
+      "name": "angular_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "27-06-2023",
+      "updated": "27-06-2023",
+      "description": "A step-by-step guide to learning Angular for beginners.",
+      "level": "basic",
+      "tags": ["angular", "web development"]
+   },
+   {
+      "topic": "vue",
+      "title": "Vue.js Beginner's Guide",
+      "name": "vuejs_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "30-06-2023",
+      "updated": "30-06-2023",
+      "description": "A step-by-step guide to learning Vue.js for beginners.",
+      "level": "basic",
+      "tags": ["vuejs", "web development"]
+   },
+   {
+      "topic": "php",
+      "title": "PHP Beginner's Guide",
+      "name": "php_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "02-07-2023",
+      "updated": "02-07-2023",
+      "description": "A step-by-step guide to learning PHP for beginners.",
+      "level": "basic",
+      "tags": ["php", "web development"]
+   },
+   {
+      "topic": "ruby",
+      "title": "Ruby Beginner's Guide",
+      "name": "ruby_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "04-07-2023",
+      "updated": "04-07-2023",
+      "description": "A step-by-step guide to learning Ruby for beginners.",
+      "level": "basic",
+      "tags": ["ruby", "programming"]
+   },
+   {
+      "topic": "cpp",
+      "title": "C++ Beginner's Guide",
+      "name": "cpp_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "06-07-2023",
+      "updated": "06-07-2023",
+      "description": "A step-by-step guide to learning C++ for beginners.",
+      "level": "basic",
+      "tags": ["c++", "programming"]
+   },
+   {
+      "topic": "node",
+      "title": "Node.js Beginner's Guide",
+      "name": "nodejs_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "09-07-2023",
+      "updated": "09-07-2023",
+      "description": "A step-by-step guide to learning Node.js for beginners.",
+      "level": "basic",
+      "tags": ["nodejs", "web development"]
+   },
+   {
+      "topic": "git",
+      "title": "Git Beginner's Guide",
+      "name": "git_beginner_guide",
+      "authors": "LearnFastTrack",
+      "created": "11-07-2023",
+      "updated": "11-07-2023",
+      "description": "A step-by-step guide to learning Git for beginners.",
+      "level": "basic",
+      "tags": ["git", "version control"]
    }
 ]

@@ -1,0 +1,105 @@
+//
+// aos.scss
+// Library overrides
+//
+
+[data-aos="img-skewed-item-left"],
+[data-aos="img-skewed-item-right"] {
+    opacity: 0;
+    transition-property: opacity, transform, -webkit-transform;
+    will-change: opacity, transform, -webkit-transform;
+    backface-visibility: hidden;
+
+    &.aos-animate {
+        opacity: 1;
+    }
+}
+[data-aos="img-skewed-item-left"] {
+    transform: rotateY(-$img-skewed-rotate-y + 15deg) rotateX($img-skewed-rotate-x - 10deg) translate3d(0, 100px, 0);
+
+    &.aos-animate {
+        transform: rotateY(-$img-skewed-rotate-y) rotateX($img-skewed-rotate-x) translate3d(0, 0, 0);
+    }
+}
+[data-aos="img-skewed-item-right"] {
+    transform: rotateY($img-skewed-rotate-y - 15deg) rotateX($img-skewed-rotate-x - 10deg) translate3d(0, 100px, 0);
+
+    &.aos-animate {
+        transform: rotateY($img-skewed-rotate-y) rotateX($img-skewed-rotate-x) translate3d(0, 0, 0);
+    }
+}
+
+html:not(.no-js) [data-aos=fade-up] {
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+
+// Fade Animation
+.sk-fade-top,
+.sk-fade-left,
+.sk-fade-bottom,
+.sk-fade-right {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+
+.sk-fade-top {
+    transform: translateY(-25px) translateZ(0);
+}
+
+.sk-fade-bottom {
+    transform: translateY(25px) translateZ(0);
+}
+
+.sk-fade-left {
+    transform: translateX(-25px) translateZ(0);
+}
+
+.sk-fade-right {
+    transform: translateX(25px) translateZ(0);
+}
+
+.sk-fade {
+    &:hover,
+    &:focus {
+        .sk-fade-top,
+        .sk-fade-left,
+        .sk-fade-bottom,
+        .sk-fade-right {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sk-fade-top,
+        .sk-fade-bottom {
+            transform: translateY(0) translateZ(0);
+        }
+
+        .sk-fade-left,
+        .sk-fade-right {
+            transform: translateX(0) translateZ(0);
+        }
+
+        .sk-push {
+            animation-name: sk-push;
+            animation-duration: 0.3s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+    }
+}
+
+/* Push */
+.sk-push {
+    transform: perspective(1px) translateZ(0);
+}
+
+@keyframes sk-push {
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

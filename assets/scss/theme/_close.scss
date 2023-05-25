@@ -1,0 +1,17 @@
+//
+// close.scss
+// Extended from Bootstrap
+//
+
+.close {
+    &:hover,
+    &:focus {
+    outline: none;
+  }
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+}

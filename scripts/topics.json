@@ -1,10 +1,331 @@
 [
    {
-      "name": "Web Development",
-      "description": "Learn the basics of web development and build your own website."
+      "name": "html",
+      "title": "HTML",
+      "category": "web_development",
+      "description": "Learn the essentials of HTML, the standard markup language for creating web pages.",
+      "image": ""
    },
    {
-      "name": "Data Science",
-      "description": "Explore the world of data science and learn how to analyze and interpret data."
+      "name": "css",
+      "title": "CSS",
+      "category": "web_development",
+      "description": "Master the art of styling web pages using Cascading Style Sheets (CSS).",
+      "image": ""
+   },
+   {
+      "name": "javascript",
+      "title": "Javascript",
+      "category": "web_development",
+      "description": "Discover the power of JavaScript, the most popular programming language for web development.",
+      "image": ""
+   },
+   {
+      "name": "jquery",
+      "title": "jQuery",
+      "category": "web_development",
+      "description": "Enhance your web development skills with jQuery, a widely-used JavaScript library.",
+      "image": ""
+   },
+   {
+      "name": "react",
+      "title": "React",
+      "category": "web_development",
+      "description": "Build modern and interactive web applications using the popular React library.",
+      "image": ""
+   },
+   {
+      "name": "angular",
+      "title": "Angular",
+      "category": "web_development",
+      "description": "Learn Angular, a powerful framework for building scalable and maintainable web applications.",
+      "image": ""
+   },
+   {
+      "name": "vue",
+      "title": "Vue",
+      "category": "web_development",
+      "description": "Explore Vue.js, a progressive JavaScript framework for building user interfaces.",
+      "image": ""
+   },
+   {
+      "name": "node",
+      "title": "Node.js",
+      "category": "web_development",
+      "description": "Dive into Node.js, a platform that allows you to build server-side applications using JavaScript.",
+      "image": ""
+   },
+   {
+      "name": "express",
+      "title": "Express",
+      "category": "web_development",
+      "description": "Get started with Express, a fast and minimalist web framework for Node.js.",
+      "image": ""
+   },
+   {
+      "name": "mongodb",
+      "title": "MongoDB",
+      "category": "web_development",
+      "description": "Learn about MongoDB, a popular NoSQL database for handling large amounts of data.",
+      "image": ""
+   },
+   {
+      "name": "python",
+      "title": "Python",
+      "category": "programming",
+      "description": "Discover the versatile and beginner-friendly Python programming language.",
+      "image": ""
+   },
+   {
+      "name": "java",
+      "title": "Java",
+      "category": "programming",
+      "description": "Learn Java, a widely-used, object-oriented programming language.",
+      "image": ""
+   },
+   {
+      "name": "c",
+      "title": "C",
+      "category": "programming",
+      "description": "Explore the fundamentals of the C programming language, a foundation for many modern languages.",
+      "image": ""
+   },
+   {
+      "name": "c++",
+      "title": "C++",
+      "category": "programming",
+      "description": "Master C++, a high-performance, object-oriented programming language.",
+      "image": ""
+   },
+   {
+      "name": "csharp",
+      "title": "C#",
+      "category": "programming",
+      "description": "Learn C#, a versatile and powerful programming language for building .NET applications.",
+      "image": ""
+   },
+   {
+      "name": "ruby",
+      "title": "Ruby",
+      "category": "programming",
+      "description": "Discover Ruby, an elegant and dynamic programming language for building web applications.",
+      "image": ""
+   },
+   {
+      "name": "php",
+      "title": "PHP",
+      "category": "programming",
+      "description": "Get started with PHP, a popular server-side scripting language for web development.",
+      "image": ""
+   },
+   {
+      "name": "go",
+      "title": "Go",
+      "category": "programming",
+      "description": "Explore Go, a statically typed and efficient programming language developed by Google.",
+      "image": ""
+   },
+   {
+      "name": "swift",
+      "title": "Swift",
+      "category": "programming",
+      "description": "Master Swift, a powerful programming language for building iOS, macOS, and watchOS applications.",
+      "image": ""
+   },
+   {
+      "name": "r",
+      "title": "R",
+      "category": "data_science",
+      "description": "Learn R, a programming language and software environment for statistical computing and graphics.",
+      "image": ""
+   },
+   {
+      "name": "sql",
+      "title": "SQL",
+      "category": "data_science",
+      "description": "Master SQL, a domain-specific language for managing relational databases.",
+      "image": ""
+   },
+   {
+      "name": "pandas",
+      "title": "Pandas",
+      "category": "data_science",
+      "description": "Get started with Pandas, a powerful library for data manipulation and analysis in Python.",
+      "image": ""
+   },
+   {
+      "name": "numpy",
+      "title": "NumPy",
+      "category": "data_science",
+      "description": "Discover NumPy, a library for the Python programming language that supports large, multi-dimensional arrays and matrices.",
+      "image": ""
+   },
+   {
+      "name": "matplotlib",
+      "title": "Matplotlib",
+      "category": "data_science",
+      "description": "Learn to create stunning visualizations using Matplotlib, a plotting library for the Python programming language.",
+      "image": ""
+   },
+   {
+      "name": "tensorflow",
+      "title": "TensorFlow",
+      "category": "data_science",
+      "description": "Explore TensorFlow, an open-source machine learning library developed by Google.",
+      "image": ""
+   },
+   {
+      "name": "keras",
+      "title": "Keras",
+      "category": "data_science",
+      "description": "Learn about Keras, a user-friendly neural network library written in Python.",
+      "image": ""
+   },
+   {
+      "name": "scikitlearn",
+      "title": "Scikit-learn",
+      "category": "data_science",
+      "description": "Master Scikit-learn, a popular machine learning library for Python.",
+      "image": ""
+   },
+   {
+      "name": "pytorch",
+      "title": "PyTorch",
+      "category": "data_science",
+      "description": "Get started with PyTorch, a powerful open-source machine learning library for Python.",
+      "image": ""
+   },
+   {
+      "name": "networking_fundamentals",
+      "title": "Networking Fundamentals",
+      "category": "networking",
+      "description": "Learn the fundamentals of computer networking, including protocols, topologies, and devices.",
+      "image": ""
+   },
+   {
+      "name": "tcp_ip",
+      "title": "TCP/IP",
+      "category": "networking",
+      "description": "Explore the TCP/IP protocol suite, the backbone of the modern internet.",
+      "image": ""
+   },
+   {
+      "name": "routing",
+      "title": "Routing",
+      "category": "networking",
+      "description": "Understand the process of routing and how routers forward packets between networks.",
+      "image": ""
+   },
+   {
+      "name": "switching",
+      "title": "Switching",
+      "category": "networking",
+      "description": "Learn about switching and how switches manage data traffic within a network.",
+      "image": ""
+   },
+   {
+      "name": "wireless_networking",
+      "title": "Wireless Networking",
+      "category": "networking",
+      "description": "Discover the principles of wireless networking and how devices communicate without wires.",
+      "image": ""
+   },
+   {
+      "name": "network_security",
+      "title": "Network Security",
+      "category": "networking",
+      "description": "Learn about network security and the various techniques used to protect networks from threats.",
+      "image": ""
+   },
+   {
+      "name": "osi_model",
+      "title": "OSI Model",
+      "category": "networking",
+      "description": "Understand the OSI model, a conceptual framework for understanding network protocols and their functions.",
+      "image": ""
+   },
+   {
+      "name": "subnetting",
+      "title": "Subnetting",
+      "category": "networking",
+      "description": "Master subnetting, a technique for dividing IP networks into smaller, more manageable segments.",
+      "image": ""
+   },
+   {
+      "name": "vlan",
+      "title": "VLAN",
+      "category": "networking",
+      "description": "Learn about Virtual Local Area Networks (VLANs) and how they improve network performance and security.",
+      "image": ""
+   },
+   {
+      "name": "cryptography",
+      "title": "Cryptography",
+      "category": "cyber_security",
+      "description": "Explore the world of cryptography, the art and science of secure communication.",
+      "image": ""
+   },
+   {
+      "name": "penetration_testing",
+      "title": "Penetration Testing",
+      "category": "cyber_security",
+      "description": "Learn the techniques of penetration testing to identify and exploit security vulnerabilities.",
+      "image": ""
+   },
+   {
+      "name": "ethical_hacking",
+      "title": "Ethical Hacking",
+      "category": "cyber_security",
+      "description": "Discover ethical hacking, a practice that helps organizations identify and fix security weaknesses.",
+      "image": ""
+   },
+   {
+      "name": "malware_analysis",
+      "title": "Malware Analysis",
+      "category": "cyber_security",
+      "description": "Understand the techniques for analyzing and mitigating malware threats.",
+      "image": ""
+   },
+   {
+      "name": "computer_forensics",
+      "title": "Computer Forensics",
+      "category": "cyber_security",
+      "description": "Delve into computer forensics, the process of investigating and preserving digital evidence for legal proceedings.",
+      "image": ""
+   },
+   {
+      "name": "incident_response",
+      "title": "Incident Response",
+      "category": "cyber_security",
+      "description": "Learn about incident response, the process of managing and recovering from security breaches.",
+      "image": ""
+   },
+   {
+      "name": "information_security_management",
+      "title": "Information Security Management",
+      "category": "cyber_security",
+      "description": "Explore the principles of information security management, including policies, risk assessment, and compliance.",
+      "image": ""
+   },
+   {
+      "name": "secure_coding",
+      "title": "Secure Coding",
+      "category": "cyber_security",
+      "description": "Discover secure coding practices to develop software that is resilient to cyber attacks.",
+      "image": ""
+   },
+   {
+      "name": "network_security",
+      "title": "Network Security",
+      "category": "cyber_security",
+      "description": "Learn the techniques and tools used to protect networks from unauthorized access and attacks.",
+      "image": ""
+   },
+   {
+      "name": "security_architecture",
+      "title": "Security Architecture",
+      "category": "cyber_security",
+      "description": "Understand security architecture and the principles behind designing secure systems and networks.",
+      "image": ""
    }
 ]

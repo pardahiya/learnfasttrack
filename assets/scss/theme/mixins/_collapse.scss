@@ -1,0 +1,23 @@
+@mixin accordion-toggle {
+    border-width: 0;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    outline: none !important;
+
+    &[aria-expanded="true"] {
+        span,div {
+            svg:not(:first-child) {
+                display: none;
+            }
+        }
+    }
+
+    &[aria-expanded="false"] {
+        span,div {
+            svg:not(:last-child) {
+                display: none;
+            }
+        }
+    }
+}

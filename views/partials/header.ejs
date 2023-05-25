@@ -1,31 +1,71 @@
-<header>
+<header class="navbar navbar-expand-xl navbar-dark bg-shark" >
   <div class="container">
-    <div class="logo">
-      <a href="/"><img src="/img/logo.png" alt="Learn Fast Track Logo" /></a>
-    </div>
-    <nav>
-      <ul class="main-menu">
-        <li>
-          <a href="#">Tutorials</a>
-          <ul class="topics-dropdown">
-            <% topics.forEach((topic) => { %>
-              <li>
-                <a href="#"><%= topic.name %></a>
-                <ul class="subtopics-dropdown">
-                  <% subtopics.filter((subtopic) => subtopic.topic.includes(topic.topic)).forEach((subtopic) => { %>
-                    <li><a href="#"><%= subtopic.name %></a></li>
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="/">
+          <img src="/img/logo-no-background.svg" class="navbar-brand-img" alt="logo">
+      </a>
+
+      <!-- Vertical Menu -->
+      <ul class="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
+          <li class="nav-item dropdown">
+              <a class="nav-link pb-4 mb-n4 px-0 pt-0" id="navbarVerticalMenu" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                  <div class="bg-white-10 rounded-xl py-3 px-5 d-flex align-items-center">
+                      <span class="text-white fw-medium me-1">Categories</span>
+                      <div class="ms-3 text-white">
+                          <!-- Icon -->
+                          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.84016 0.540385L9.5126 0.210545C9.40951 0.107536 9.27235 0.0507876 9.12577 0.0507876C8.97926 0.0507876 8.84194 0.107536 8.73885 0.210545L5.00224 3.94732L1.26131 0.206399C1.15838 0.10339 1.02107 0.0467224 0.87456 0.0467224C0.728055 0.0467224 0.590655 0.10339 0.487646 0.206399L0.160001 0.534206C-0.0533338 0.747379 -0.0533338 1.09462 0.160001 1.30779L4.61402 5.77783C4.71695 5.88075 4.8541 5.95327 5.00191 5.95327H5.00362C5.1502 5.95327 5.28736 5.88067 5.39029 5.77783L9.84016 1.3199C9.94325 1.21698 9.99984 1.07567 10 0.929169C10 0.782582 9.94325 0.643231 9.84016 0.540385Z" fill="currentColor"/>
+                          </svg>
+
+                      </div>
+                  </div>
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-md bg-white rounded py-4 mt-4" aria-labelledby="navbarVerticalMenu">
+                <% categories.forEach(category => { %>  
+                  <li class="dropdown-item dropright">
+                      <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="/categories/<%= category.name %>">
+                          <div class="me-4 d-flex text-primary icon-xs">
+                              <!-- Icon -->
+                              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10.5247 5.64759C10.3104 5.21736 9.6919 5.21322 9.47557 5.64759L5.37401 13.8898C5.28096 14.0767 5.29443 14.299 5.4094 14.4734L7.65635 17.8813V20.0493C7.65635 20.3729 7.91869 20.6352 8.24229 20.6352H11.7579C12.0815 20.6352 12.3439 20.3729 12.3439 20.0493V17.8813L14.5908 14.4734C14.7058 14.299 14.7192 14.0767 14.6262 13.8898L10.5247 5.64759ZM11.172 19.4633H8.82822V18.2915H11.172V19.4633ZM11.4424 17.1196H8.55779L6.57342 14.1099L9.41416 8.40131V14.1508C9.41416 14.4744 9.67651 14.7368 10.0001 14.7368C10.3237 14.7368 10.586 14.4744 10.586 14.1508V8.40131L13.4268 14.1099L11.4424 17.1196Z" fill="currentColor" fill-opacity="0.6"/>
+                                  <path d="M18.2422 0.635132C17.4783 0.635132 16.827 1.12501 16.5852 1.80701H11.7578V1.22107C11.7578 0.897476 11.4955 0.635132 11.1719 0.635132H8.82812C8.50453 0.635132 8.24219 0.897476 8.24219 1.22107V1.80701H3.41484C3.17297 1.12501 2.52168 0.635132 1.75781 0.635132C0.788555 0.635132 0 1.42369 0 2.39294C0 3.3622 0.788555 4.15076 1.75781 4.15076C2.52168 4.15076 3.17297 3.66048 3.41484 2.97849H5.60676C2.87645 4.5465 1.17188 7.44322 1.17188 10.5961C1.17188 10.9197 1.43422 11.182 1.75781 11.182C2.08141 11.182 2.34375 10.9197 2.34375 10.5961C2.34375 7.06076 4.8359 3.98591 8.24219 3.18271V3.56482C8.24219 3.88841 8.50453 4.15076 8.82812 4.15076H11.1719C11.4955 4.15076 11.7578 3.88841 11.7578 3.56482V3.18267C15.1641 3.98591 17.6562 7.06076 17.6562 10.5961C17.6562 10.9197 17.9186 11.182 18.2422 11.182C18.5658 11.182 18.8281 10.9197 18.8281 10.5961C18.8281 7.44724 17.127 4.54884 14.3932 2.97888H16.5852C16.827 3.66087 17.4783 4.15076 18.2422 4.15076C19.2114 4.15076 20 3.3622 20 2.39294C20 1.42369 19.2114 0.635132 18.2422 0.635132ZM1.75781 2.97888C1.43473 2.97888 1.17188 2.71603 1.17188 2.39294C1.17188 2.06986 1.43473 1.80701 1.75781 1.80701C2.0809 1.80701 2.34375 2.06986 2.34375 2.39294C2.34375 2.71603 2.0809 2.97888 1.75781 2.97888ZM10.5859 2.97888H9.41406V1.80701H10.5859V2.97888ZM18.2422 2.97888C17.9191 2.97888 17.6562 2.71603 17.6562 2.39294C17.6562 2.06986 17.9191 1.80701 18.2422 1.80701C18.5653 1.80701 18.8281 2.06986 18.8281 2.39294C18.8281 2.71603 18.5653 2.97888 18.2422 2.97888Z" fill="currentColor"/>
+                              </svg>
+
+                          </div>
+                          <%= category.title %>
+                      </a>
+
+                      <div class="dropdown-menu ps-3 top-0 pe-0 py-0 shadow-none bg-transparent">
+                          <div class="dropdown-menu-md bg-white rounded dropdown-menu-inner">
+                              <% category.topics.forEach(topic => { %>  
+                                <a class="dropdown-item" href="/topics/<%= topic.name %>">
+                                  <%= topic.title %>
+                                </a>
+                              <% }) %>
+                          </div>
+                      </div>
+                  </li>
                 <% }) %>
-                </ul>
-              </li>
-            <% }); %>
-          </ul>
-        </li>
+
+              </ul>
+          </li>
       </ul>
-    </nav>
-    <div class="search">
-      <form action="/search" method="GET">
-        <input type="text" name="q" placeholder="Search...">
-      </form>
-    </div>
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse z-index-lg" id="navbarCollapse">
+
+          <!-- Toggler -->
+          <button class="navbar-toggler outline-0 text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- Icon -->
+              <svg width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.142135 2.00015L1.55635 0.585938L15.6985 14.7281L14.2843 16.1423L0.142135 2.00015Z" fill="currentColor"></path>
+                  <path d="M14.1421 1.0001L15.5563 2.41431L1.41421 16.5564L0 15.1422L14.1421 1.0001Z" fill="currentColor"></path>
+              </svg>
+
+          </button>
+      </div>
+
   </div>
 </header>

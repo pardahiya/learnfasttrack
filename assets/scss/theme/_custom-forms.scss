@@ -1,0 +1,194 @@
+//
+// custom-forms.scss
+// Extended from Bootstrap
+//
+
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.6rem;
+    padding-left: 1.5rem;
+}
+
+.custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.3rem;
+    opacity: 0;
+}
+
+// Custom label
+
+.custom-control-label {
+    color: $body-color;
+    font-size: $font-size-sm;
+    padding-left: 6px;
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+
+    // Foreground (icon)
+    &::after {
+        top: .55rem;
+        left: -1.24rem;
+        width: .5rem;
+        height: .5rem;
+        content: "";
+        background: transparent;
+        border-radius: 3px;
+        position: absolute;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0.3rem;
+        left: -1.5rem;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        pointer-events: none;
+        content: "";
+        background-color: transparent;
+        border: #e7e7ec solid 1px;
+        border-radius: 3px;
+    }
+}
+
+.custom-control-input {
+    &:not(:disabled):active ~ .custom-control-label::before {
+        background-color: transparent;
+        border-color: $primary;
+    }
+
+    &:checked ~ .custom-control-label {
+        &::before {
+            border-color: $primary;
+        }
+    }
+}
+
+// Checkboxes
+//
+// Tweak just a few things for checkboxes.
+
+.custom-checkbox {
+    .custom-control-input:checked ~ .custom-control-label {
+        &::after {
+            background-color: $primary;
+            border-radius: 3px;
+        }
+    }
+}
+
+// Radios
+//
+// Tweak just a few things for radios.
+
+.custom-radio {
+    .custom-control-label::before {
+        border-radius: 50%;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+        &::after {
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+}
+
+// Switch
+
+.custom-switch {
+    min-height: $custom-switch-height;
+    padding-left: 4.25rem;
+
+    .custom-control-label {
+
+        &::before {
+            top: (($font-size-base * $line-height-base - $custom-switch-height) / 2);
+            height: $custom-switch-height;
+            border-radius: $custom-switch-height / 2;
+            left: -4.25rem;
+            width: 3.75rem;
+            pointer-events: all;
+        }
+
+        &::after {
+            top: (($font-size-base * $line-height-base - $custom-switch-height) / 2 + $custom-switch-spacing);
+            left: $custom-switch-spacing - $custom-control-gutter - $custom-switch-width;
+            background-color: $custom-switch-indicator-bg;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.625rem;
+        }
+    }
+
+    .custom-control-input:checked~.custom-control-label::before {
+        background-color: $blue;
+        border-color: $border-color;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+        &::after {
+            background-color: $custom-switch-indicator-active-bg;
+            transform: translateX($custom-switch-width - $custom-switch-spacing * 2 - $custom-switch-indicator-size);
+        }
+    }
+}
+
+// Switch dark
+
+.custom-switch-dark {
+
+    .custom-control-label {
+
+        &::before {
+            background-color: $custom-switch-bg-dark;
+        }
+
+        &::after {
+            background-color: $custom-switch-indicator-bg-dark;
+        }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+        &::before {
+            background-color: $custom-switch-active-bg-dark;
+        }
+
+        &::after {
+            background-color: $custom-switch-active-indicator-bg-dark;
+        }
+    }
+}
+
+
+// Custom select
+
+// Sizing
+
+.custom-select-sm {
+    background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x-sm center / $custom-select-bg-size;
+    line-height: 2;
+    padding-left: 1.5rem;
+}
+
+.custom-select-xs {
+    height: $custom-select-height-xs;
+    padding: $custom-select-padding-y-xs ($custom-select-padding-x-xs + $custom-select-indicator-padding-xs) $custom-select-padding-y-xs $custom-select-padding-x-xs;
+    background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x-xs center / $custom-select-bg-size;
+    line-height: $custom-select-line-height-xs;
+    font-size: $custom-select-font-size-xs;
+}
+
+.custom-select-white {
+    background-image: $custom-select-indicator-white;
+}
+
+.custom-select-white-off {
+    background-image: $custom-select-indicator-white-off;
+}
